@@ -4,14 +4,16 @@
 
 **Open index-builder.html to edit your website.** It is a standalone file: no server, installation, account, or API key is needed. The builder starts with your current portfolio and its original color palette.
 
-Open **index.html** to view the website, or **projects.html** to view the eight-project collection.
+Open **index.html** to view the website, or **projects.html** to view the eight-project collection. Keep **pdfs/** and **previews/** beside these pages so the framed document tiles and downloads work. The standalone builder includes the seven supplied PDFs and their preview images for later ZIP exports.
 
 ## Change colors and content
 
 1. In **Colors**, choose one of eight palettes or adjust individual colors. Both signal colors, text, accents, the main background, and the teaching panel are editable.
 2. In **Content**, edit your name, introduction, biography, research, courses, project-page introduction, and footer. Headings support line breaks; list fields use one item per line.
 3. In **Projects**, edit project titles, descriptions, notes, and links. Choose whether to include each project and whether to feature it on the homepage. Move projects up or down, or add and remove cards.
-4. Use the homepage/projects and desktop/tablet/mobile selectors above the live preview. Scroll and move the pointer inside the preview to interact with the signal. External app links open from the exported website.
+4. In **PDFs**, edit titles, categories, descriptions, page counts, links, and gallery placement. Reorder or hide documents. For a new document, supply a PDF link and a first-page PNG, JPEG, or WebP image link; upload those files with the website, or use existing HTTPS URLs. The builder bundles the seven supplied documents; it does not fetch new URLs.
+5. In **Math**, edit the LaTeX, card copy, variable definitions, conditions, and source attribution. Reorder, hide, remove, or add equations. Standard LaTeX is rendered as native MathML; current browsers display it offline. Expand **Inside the equation** on the website for notation and sources.
+6. Use the homepage/projects and desktop/tablet/mobile selectors above the live preview. Scroll and move the pointer inside the preview to interact with the signal. External app links open from the exported website.
 
 **Original ember** always restores the original colors. The **Original website** entry in Versions restores the original content and colors together.
 
@@ -36,16 +38,42 @@ For later edits, choose **Export → Website pages ZIP** in the builder. It down
 - index.html — your updated homepage
 - projects.html — your matching project collection
 - portfolio-design.json — editable design backup
+- pdfs/ — the seven bundled original documents
+- previews/ — their actual first-page images
 - .nojekyll
 - READ-ME.txt
 
-Replace the two HTML pages in your existing repository, and **keep your existing apps/ folder**. The builder's update ZIP contains the website pages and settings; it does not repackage the app files. Those eight apps are included in this complete portfolio package. When you add a new project card, upload its app or point the card at an existing external URL.
+Replace the two HTML pages and copy **pdfs/** and **previews/** into your repository. **Keep your existing apps/ folder**. The builder’s update ZIP contains the pages, settings, and the seven supplied documents and previews; it does not repackage the app files. Those eight apps are included in this complete portfolio package. When you add a new project card, upload its app or point the card at an existing external URL.
 
-The exported homepage and projects page contain their own CSS and interactive signal code. They do not need a separate stylesheet or signal.js. Updating a palette in the builder keeps both pages consistent when you export them together. The editor does not change the styling inside the eight independent apps.
+The exported homepage and projects page contain their own CSS, native MathML, and interactive signal code. Their document images and downloads use the companion previews/ and pdfs/ folders. They do not need a separate stylesheet or signal.js. Updating a palette in the builder keeps both pages consistent when you export them together. The editor does not change the styling inside the eight independent apps.
 
 Keep index-builder.html and your design JSON wherever you prefer to edit; neither is required for the public website. Your previous unrelated styles.css and other project pages can stay in the repository.
 
 For the main personal site, use **ml-adnan-bashir.github.io**. In repository Settings → Pages, select **Deploy from a branch**, **main**, and **/ (root)**. The address will be https://ml-adnan-bashir.github.io/ when GitHub finishes deployment. All internal project links are relative, so subdirectory project sites are also supported.
+
+## Papers, diagrams, and teaching PDFs
+
+All thumbnails show the actual first page, inside a responsive frame. A thumbnail opens the PDF in a new tab; each tile also has a download link. Source PDFs are copied without changes.
+
+| Document | Pages | Website placement |
+|---|---:|---|
+| DRUM: A Real Time Detector for Regime Shifts in Data Streams via an Unsupervised, Multivariate Framework | 9 | Papers & diagrams |
+| SegStream backbone flowchart | 1 | Papers & diagrams |
+| NAT-ICS practice test with worked answers | 26 | Teaching resources |
+| NAT-ICS analytical reasoning guide | 18 | Teaching resources |
+| NET mathematics formula and trick book | 12 | Teaching resources |
+| NET physics formula and trick book | 12 | Teaching resources |
+| NET Benchmark MCQ strategy book | 221 | Teaching resources |
+
+DRUM is credited to Adnan Bashir and Trilce Estrada, DaWaK 2023, LNCS 14148, pp. 294–302; DOI: https://doi.org/10.1007/978-3-031-39831-5_27 . The separate SegStream flowchart is labeled a research diagram.
+
+The five teaching resources were selected from the uploaded website archive. Two overlapping math-revision versions and the invalid five-byte test.pdf placeholder were omitted. Original PDF content and branding are preserved.
+
+## Mathematical notes
+
+Six cards cover DRUM’s Lobo Change Score, Shannon capacity, Little’s law, Bayes’ rule, cross-entropy loss, and Shannon entropy. DRUM’s score is transcribed from Eq. (4), printed p. 296 / PDF page 3, with the variable and weight definitions from the paper. The other five are established foundations, clearly attributed and not presented as original research or claims about the DRUM implementation. Every card has a source link and expandable notation and model conditions.
+
+The studio embeds KaTeX 0.16.11 for converting editable LaTeX to MathML. The public pages need no math CDN or JavaScript math renderer. KaTeX’s MIT notice is embedded in the builder and included in THIRD-PARTY-NOTICES.txt. JSZip is embedded for local ZIP generation. Supplied PDF data lives in the builder, outside design settings, so named versions remain compact. Older builder designs automatically acquire the new document and math sections while retaining their previous content and colors.
 
 ## Selected projects
 
@@ -78,10 +106,10 @@ The portfolio and signal use no external libraries. Individual apps retain these
 
 ## Validation
 
-Checked standalone HTML and JSON export/reopen round trips, including Urdu, quotes, angle brackets, and literal script-closing text. Checked independent version snapshots, history limits, storage-failure handling, invalid import rejection, URL validation, all eight palettes, selected-project counts, local links, and inline JavaScript parsing. No browser visual test, live network speed test, or phone-sensor measurement was performed.
+Checked standalone HTML and JSON export/reopen round trips, including Urdu, quotes, angle brackets, and literal script-closing text. Checked independent version snapshots, history limits, storage-failure handling, invalid import rejection, URL validation, all eight palettes, selected-project counts, local links, and inline JavaScript parsing. Also checked legacy design migration, valid MathML generation, document/math visibility controls, malformed LaTeX handling, all 14 bundled PDF/image asset bytes, PDF and image links, and unchanged hashes of the two supplied PDFs. First pages were rendered and inspected. No browser visual test, live network speed test, or phone-sensor measurement was performed.
 
-The signal retains pointer bending, click/tap ripples, scroll-to-side fields, a pause control, and reduced-motion support. The homepage and projects collection use the same saved palette.
+The signal retains pointer bending, click/tap ripples, a pause control, and reduced-motion support. Between sections or project, document, and equation tile rows, the two ribbons curve inward and touch at the center. They open out again when the next section or row reaches the upper third of the viewport. Scrolling upward reverses the same motion. Section positions are remeasured after layout changes, including expanded research/course details and mobile reflow. The homepage and projects collection use the same saved palette.
 
-Research descriptions do not claim publication status or benchmark results. Course themes are introductory summaries, not official syllabi.
+DRUM publication metadata comes from the supplied paper. Other research descriptions do not claim publication status or benchmark results. Course themes are introductory summaries, not official syllabi.
 
 Original portfolio and signal design, with appreciation for https://openai.com/index/gpt-6-astra/ . Independent personal website; no OpenAI affiliation or endorsement.

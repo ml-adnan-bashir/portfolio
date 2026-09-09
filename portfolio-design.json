@@ -8,8 +8,8 @@
     "accent": "#f4c4ad",
     "signalA": "#f3ae89",
     "signalB": "#8992b8",
-    "panel": "#090A0D",
-    "panelText": "#F4F3EF"
+    "panel": "#efefeb",
+    "panelText": "#15161a"
   },
   "profile": {
     "name": "Adnan Bashir",
@@ -112,7 +112,7 @@
     ]
   },
   "teaching": {
-    "eyebrow": "03 / Teaching & classes",
+    "eyebrow": "04 / Teaching",
     "heading": "Make it clear.\nThen go deeper.",
     "semester": "Fall 2026 / Air University",
     "intro": "I use concrete examples, numerical walkthroughs, and interactive experiments to help students move from intuition to understanding.",
@@ -144,7 +144,7 @@
     ]
   },
   "exploration": {
-    "eyebrow": "04 / Exploration",
+    "eyebrow": "06 / Exploration",
     "heading": "Ideas you can see.",
     "paragraphs": [
       "Alongside research and teaching, I build interactive visualizations: tools for inspecting time-series boundaries, exploring statistical tests, and explaining the mathematics behind machine learning.",
@@ -152,7 +152,7 @@
     ]
   },
   "featured": {
-    "eyebrow": "05 / Selected projects",
+    "eyebrow": "08 / Selected projects",
     "heading": "From an idea\nto something you can use.",
     "intro": "Research tools, small utilities, and creative experiments. These are a few of the things I’ve built along the way."
   },
@@ -260,5 +260,174 @@
       "enabled": true,
       "featured": false
     }
-  ]
+  ],
+  "papers": {
+    "eyebrow": "03 / Papers & diagrams",
+    "heading": "Ideas, on paper.",
+    "intro": "Published work and the structures behind my ongoing research. Open a first page to explore the full document."
+  },
+  "resources": {
+    "eyebrow": "05 / Teaching resources",
+    "heading": "A desk full of\npossibilities.",
+    "intro": "Practice, reasoning, and revision. A selection of my teaching materials, with the original PDFs ready to read and download."
+  },
+  "documents": [
+    {
+      "id": "drum-paper",
+      "title": "DRUM",
+      "kind": "paper",
+      "category": "Published paper",
+      "meta": "Adnan Bashir & Trilce Estrada · DaWaK 2023",
+      "description": "A Real Time Detector for Regime Shifts in Data Streams via an Unsupervised, Multivariate Framework.",
+      "pages": "9",
+      "url": "pdfs/drum-paper.pdf",
+      "preview": "previews/drum-paper.webp",
+      "enabled": true
+    },
+    {
+      "id": "segstream-flowchart",
+      "title": "SegStream backbone",
+      "kind": "paper",
+      "category": "Research diagram",
+      "meta": "Architecture overview",
+      "description": "From causal stream input to online state labels: boundary evidence, contrastive representation, prototype memory, and smoothing.",
+      "pages": "1",
+      "url": "pdfs/segstream-flowchart.pdf",
+      "preview": "previews/segstream-flowchart.webp",
+      "enabled": true
+    },
+    {
+      "id": "nat-ics-practice",
+      "title": "NAT-ICS practice test",
+      "kind": "resource",
+      "category": "Practice & worked answers",
+      "meta": "90 questions · 120-minute practice",
+      "description": "A complete practice paper with English, analytical reasoning, quantitative, and subject sections, followed by worked answers.",
+      "pages": "26",
+      "url": "pdfs/nat-ics-practice.pdf",
+      "preview": "previews/nat-ics-practice.webp",
+      "enabled": true
+    },
+    {
+      "id": "analytical-reasoning",
+      "title": "Thinking through the problem",
+      "kind": "resource",
+      "category": "Analytical reasoning",
+      "meta": "NAT-ICS preparation guide",
+      "description": "Arrangements, grouping, rankings, and statement-based reasoning, with an emphasis on diagrams and careful elimination.",
+      "pages": "18",
+      "url": "pdfs/analytical-reasoning.pdf",
+      "preview": "previews/analytical-reasoning.webp",
+      "enabled": true
+    },
+    {
+      "id": "mathematics-formulas",
+      "title": "Mathematics, at a glance",
+      "kind": "resource",
+      "category": "Formula collection",
+      "meta": "NET mathematics revision",
+      "description": "A compact reference for algebra, logarithms, functions, and more, paired with worked shortcuts and revision notes.",
+      "pages": "12",
+      "url": "pdfs/mathematics-formulas.pdf",
+      "preview": "previews/mathematics-formulas.webp",
+      "enabled": true
+    },
+    {
+      "id": "physics-formulas",
+      "title": "The language of physics",
+      "kind": "resource",
+      "category": "Formula collection",
+      "meta": "NET physics revision",
+      "description": "Units, dimensions, vectors, equilibrium, and further physics topics, organized as a practical formula and trick book.",
+      "pages": "12",
+      "url": "pdfs/physics-formulas.pdf",
+      "preview": "previews/physics-formulas.webp",
+      "enabled": true
+    },
+    {
+      "id": "mcq-strategy",
+      "title": "Patterns, traps & possibilities",
+      "kind": "resource",
+      "category": "MCQ strategy book",
+      "meta": "Mathematics · Physics · English",
+      "description": "A concept-first collection of question patterns, distractors, and problem-solving strategies, with a final practice test.",
+      "pages": "221",
+      "url": "pdfs/mcq-strategy.pdf",
+      "preview": "previews/mcq-strategy.webp",
+      "enabled": true
+    }
+  ],
+  "mathematics": {
+    "eyebrow": "07 / Mathematical notes",
+    "heading": "A few equations.\nMany connections.",
+    "intro": "From detecting change in a stream to learning from a network. One equation from my published research, alongside five foundations that help connect these ideas.",
+    "items": [
+      {
+        "id": "drum-lcs",
+        "title": "Recognizing a changing stream",
+        "label": "From my research · DRUM",
+        "latex": "\\begin{aligned}LCS_{j,k} &= \\alpha\\sum_{i=1}^{n}\\Delta m_{i,j,k} \\\\ &\\quad+\\beta\\sum_{i=1}^{n}\\Delta s_{i,j,k} \\\\ &\\quad+\\gamma\\sum_{i=1}^{n}\\Delta frm_{i,j,k}\\end{aligned}",
+        "description": "DRUM combines changes in a stream’s mean, variability, and crossings of its running mean to support unsupervised detection of regime shifts.",
+        "notation": "i indexes the n variables; j and k are the starting positions of two windows of length d + 1. The deltas are absolute differences in window means, standard deviations, and running-mean crossing counts. The weights α, β, γ lie in [0, 1]; the paper does not require them to sum to one.",
+        "sourceLabel": "Bashir & Estrada · DRUM, Eq. (4), p. 296",
+        "sourceUrl": "pdfs/drum-paper.pdf#page=3",
+        "enabled": true
+      },
+      {
+        "id": "shannon-capacity",
+        "title": "The capacity of a connection",
+        "label": "Foundation · Information theory",
+        "latex": "C=B\\log_2\\!\\left(1+\\frac{S}{N}\\right)",
+        "description": "Bandwidth and noise set the limits of communication. Those limits shape how sensing, learning, and inference move across a network.",
+        "notation": "C is capacity in bits per second; B is bandwidth in hertz; S/N is the signal-to-noise power ratio in linear units. This form applies to a band-limited additive white Gaussian noise channel with an average signal-power constraint.",
+        "sourceLabel": "Shannon · A Mathematical Theory of Communication, 1948",
+        "sourceUrl": "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf",
+        "enabled": true
+      },
+      {
+        "id": "little",
+        "title": "The mathematics of waiting",
+        "label": "Foundation · Computer networks",
+        "latex": "L=\\lambda W",
+        "description": "Every packet and inference request spends time inside a system. Little’s law connects that time to throughput and the amount of work in flight.",
+        "notation": "L is the mean number of items in the system; λ is the effective arrival rate; W is the mean time spent there. Use consistent system boundaries and a stable regime with finite long-run averages.",
+        "sourceLabel": "Little · A Proof for the Queuing Formula L = λW, 1961",
+        "sourceUrl": "https://doi.org/10.1287/opre.9.3.383",
+        "enabled": true
+      },
+      {
+        "id": "bayes",
+        "title": "Evidence becomes belief",
+        "label": "Foundation · Probabilistic inference",
+        "latex": "P(A\\mid E)=\\frac{P(E\\mid A)\\,P(A)}{P(E)}",
+        "description": "An unusual observation is evidence, not a verdict. Bayesian reasoning combines observations with prior knowledge to update a hypothesis about the system.",
+        "notation": "A is a hypothesis, such as an anomalous state; E is observed evidence. P(A) is the prior and P(A | E) is the posterior. This event-based form requires P(E) > 0.",
+        "sourceLabel": "Bayes’ rule · Deep Learning, §3.11",
+        "sourceUrl": "https://www.deeplearningbook.org/contents/prob.html",
+        "enabled": true
+      },
+      {
+        "id": "cross-entropy",
+        "title": "Learning from prediction",
+        "label": "Foundation · Machine learning",
+        "latex": "\\mathcal{L}_{\\mathrm{CE}}=-\\sum_{c=1}^{K}y_c\\log\\hat p_c",
+        "description": "A model learns by assigning probability to observed outcomes. Cross-entropy turns that mismatch into a training objective for tasks such as traffic classification.",
+        "notation": "For one example, y_c is the target probability for class c, p̂_c is the predicted probability, and K is the number of classes. Both probability vectors sum to one. Predictions must be positive wherever targets are positive. Natural logarithms give loss in nats.",
+        "sourceLabel": "Cross-entropy · Deep Learning, §3.13",
+        "sourceUrl": "https://www.deeplearningbook.org/contents/prob.html",
+        "enabled": true
+      },
+      {
+        "id": "entropy",
+        "title": "Measuring uncertainty",
+        "label": "Foundation · Information & learning",
+        "latex": "H(X)=-\\sum_x p(x)\\log_2 p(x)",
+        "description": "Entropy describes uncertainty in a distribution. It provides a shared mathematical language for communication patterns and probabilistic predictions.",
+        "notation": "X is a discrete random variable with probability mass function p(x). Base-two logarithms give bits, and 0 log 0 is defined as 0. Entropy alone does not establish that traffic is anomalous or that a model is calibrated.",
+        "sourceLabel": "Shannon · A Mathematical Theory of Communication, 1948",
+        "sourceUrl": "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf",
+        "enabled": true
+      }
+    ]
+  }
 }
