@@ -1,0 +1,9 @@
+PORTFOLIO WEBSITE UPDATE
+
+Replace index.html and projects.html in your existing website. Keep your apps/ folder. The exported pages contain their own CSS and signal code.
+
+This ZIP updates the website pages; it does not include your app files. Your original complete portfolio package contains those apps.
+
+Keep portfolio-design.json to continue editing. Open index-builder.html and choose Open design. You can also reopen either exported HTML page in the builder.
+
+Generated 2026-09-09T23:15:21.549Z
