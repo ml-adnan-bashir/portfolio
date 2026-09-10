@@ -6,4 +6,4 @@ This ZIP updates the website pages and bundled documents; it does not include yo
 
 Keep portfolio-design.json to continue editing. Open index-builder.html and choose Open design. You can also reopen either exported HTML page in the builder.
 
-Generated 2026-09-10T00:56:14.246Z
+Generated 2026-09-10T01:09:06.351Z

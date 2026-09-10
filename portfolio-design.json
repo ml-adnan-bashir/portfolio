@@ -271,66 +271,6 @@
       "url": "pdfs/segstream-flowchart.pdf",
       "preview": "previews/segstream-flowchart.webp",
       "enabled": true
-    },
-    {
-      "id": "nat-ics-practice",
-      "title": "NAT-ICS practice test",
-      "kind": "resource",
-      "category": "Practice & worked answers",
-      "meta": "90 questions · 120-minute practice",
-      "description": "A complete practice paper with English, analytical reasoning, quantitative, and subject sections, followed by worked answers.",
-      "pages": "26",
-      "url": "pdfs/nat-ics-practice.pdf",
-      "preview": "previews/nat-ics-practice.webp",
-      "enabled": true
-    },
-    {
-      "id": "analytical-reasoning",
-      "title": "Thinking through the problem",
-      "kind": "resource",
-      "category": "Analytical reasoning",
-      "meta": "NAT-ICS preparation guide",
-      "description": "Arrangements, grouping, rankings, and statement-based reasoning, with an emphasis on diagrams and careful elimination.",
-      "pages": "18",
-      "url": "pdfs/analytical-reasoning.pdf",
-      "preview": "previews/analytical-reasoning.webp",
-      "enabled": true
-    },
-    {
-      "id": "mathematics-formulas",
-      "title": "Mathematics, at a glance",
-      "kind": "resource",
-      "category": "Formula collection",
-      "meta": "NET mathematics revision",
-      "description": "A compact reference for algebra, logarithms, functions, and more, paired with worked shortcuts and revision notes.",
-      "pages": "12",
-      "url": "pdfs/mathematics-formulas.pdf",
-      "preview": "previews/mathematics-formulas.webp",
-      "enabled": true
-    },
-    {
-      "id": "physics-formulas",
-      "title": "The language of physics",
-      "kind": "resource",
-      "category": "Formula collection",
-      "meta": "NET physics revision",
-      "description": "Units, dimensions, vectors, equilibrium, and further physics topics, organized as a practical formula and trick book.",
-      "pages": "12",
-      "url": "pdfs/physics-formulas.pdf",
-      "preview": "previews/physics-formulas.webp",
-      "enabled": true
-    },
-    {
-      "id": "mcq-strategy",
-      "title": "Patterns, traps & possibilities",
-      "kind": "resource",
-      "category": "MCQ strategy book",
-      "meta": "Mathematics · Physics · English",
-      "description": "A concept-first collection of question patterns, distractors, and problem-solving strategies, with a final practice test.",
-      "pages": "221",
-      "url": "pdfs/mcq-strategy.pdf",
-      "preview": "previews/mcq-strategy.webp",
-      "enabled": true
     }
   ],
   "mathematics": {
@@ -419,7 +359,7 @@
     "headings": 100,
     "cardTitles": 100,
     "labels": 100,
-    "equations": 100,
+    "equations": 85,
     "tilePadding": 100,
     "pdfHeight": 100,
     "sectionSpacing": 100,
