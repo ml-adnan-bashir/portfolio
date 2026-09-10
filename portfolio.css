@@ -8,3 +8,6 @@ body{isolation:isolate}#field{position:fixed;inset:0;width:100%;height:100%;poin
 /* Leave the side fields visible beside the light teaching panel. */
 .teaching{margin-inline:6vw;padding-inline:2vw;background:#efefeb}
 @media(max-width:720px){.teaching{margin-inline:3vw;padding-inline:3vw}}
+
+/* Portfolio page-visit counter */
+footer{flex-wrap:wrap}.visit-counter{flex-basis:100%;display:flex;justify-content:flex-end;align-items:center;min-height:24px;padding-top:12px}.visit-counter img{height:20px;max-width:100%;vertical-align:middle}.visit-counter [hidden]{display:none}.visit-counter-status{font-size:12px;line-height:20px;color:var(--muted);border:1px solid var(--line);padding:1px 9px;border-radius:3px}@media(max-width:720px){.visit-counter{justify-content:flex-start}}
