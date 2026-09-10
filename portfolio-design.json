@@ -8,8 +8,8 @@
     "accent": "#f4c4ad",
     "signalA": "#f3ae89",
     "signalB": "#8992b8",
-    "panel": "#efefeb",
-    "panelText": "#15161a"
+    "panel": "#15161A",
+    "panelText": "#EFEFEB"
   },
   "profile": {
     "name": "Adnan Bashir",
@@ -112,7 +112,7 @@
     ]
   },
   "teaching": {
-    "eyebrow": "04 / Teaching",
+    "eyebrow": "03 / Teaching & classes",
     "heading": "Make it clear.\nThen go deeper.",
     "semester": "Fall 2026 / Air University",
     "intro": "I use concrete examples, numerical walkthroughs, and interactive experiments to help students move from intuition to understanding.",
@@ -144,7 +144,7 @@
     ]
   },
   "exploration": {
-    "eyebrow": "06 / Exploration",
+    "eyebrow": "04 / Exploration",
     "heading": "Ideas you can see.",
     "paragraphs": [
       "Alongside research and teaching, I build interactive visualizations: tools for inspecting time-series boundaries, exploring statistical tests, and explaining the mathematics behind machine learning.",
@@ -152,7 +152,7 @@
     ]
   },
   "featured": {
-    "eyebrow": "08 / Selected projects",
+    "eyebrow": "05 / Selected projects",
     "heading": "From an idea\nto something you can use.",
     "intro": "Research tools, small utilities, and creative experiments. These are a few of the things I’ve built along the way."
   },
@@ -223,30 +223,6 @@
       "url": "apps/urdu-cloud/index.html",
       "enabled": true,
       "featured": true
-    },
-    {
-      "id": "erm",
-      "name": "Enterprise Workspace",
-      "category": "Operations prototype",
-      "mark": "ER",
-      "description": "A browser-based operations workspace connecting tasks, people, planning, approvals, and reporting in one interface.",
-      "features": "Task workflows · monthly planning · audit log · theme customization",
-      "note": "Interactive prototype with demonstration records stored in your browser.",
-      "url": "apps/erm/index.html",
-      "enabled": true,
-      "featured": false
-    },
-    {
-      "id": "cantt-events",
-      "name": "Cantt Events",
-      "category": "Operations & spatial visualization",
-      "mark": "CE",
-      "description": "An events-management prototype combining hall bookings, a fleet map, alerts, and operational reports.",
-      "features": "Booking calendar · simulated fleet tracking · map themes · PDF reports",
-      "note": "Demonstration fleet data. Maps and chart libraries require internet.",
-      "url": "apps/cantt-events/index.html",
-      "enabled": true,
-      "featured": false
     },
     {
       "id": "tilt-scale",
@@ -366,12 +342,13 @@
         "id": "drum-lcs",
         "title": "Recognizing a changing stream",
         "label": "From my research · DRUM",
-        "latex": "\\begin{aligned}LCS_{j,k} &= \\alpha\\sum_{i=1}^{n}\\Delta m_{i,j,k} \\\\ &\\quad+\\beta\\sum_{i=1}^{n}\\Delta s_{i,j,k} \\\\ &\\quad+\\gamma\\sum_{i=1}^{n}\\Delta frm_{i,j,k}\\end{aligned}",
+        "latex": "\\begin{aligned}LCS_{j,k} &= \\alpha\\sum_{i=1}^{n}\\Delta m_{i,j,k} \\&\\quad+\\beta\\sum_{i=1}^{n}\\Delta s_{i,j,k} &\\quad+\\gamma\\sum_{i=1}^{n}\\Delta frm_{i,j,k}\\end{aligned}",
         "description": "DRUM combines changes in a stream’s mean, variability, and crossings of its running mean to support unsupervised detection of regime shifts.",
         "notation": "i indexes the n variables; j and k are the starting positions of two windows of length d + 1. The deltas are absolute differences in window means, standard deviations, and running-mean crossing counts. The weights α, β, γ lie in [0, 1]; the paper does not require them to sum to one.",
         "sourceLabel": "Bashir & Estrada · DRUM, Eq. (4), p. 296",
         "sourceUrl": "pdfs/drum-paper.pdf#page=3",
-        "enabled": true
+        "enabled": true,
+        "scale": 100
       },
       {
         "id": "shannon-capacity",
@@ -382,7 +359,8 @@
         "notation": "C is capacity in bits per second; B is bandwidth in hertz; S/N is the signal-to-noise power ratio in linear units. This form applies to a band-limited additive white Gaussian noise channel with an average signal-power constraint.",
         "sourceLabel": "Shannon · A Mathematical Theory of Communication, 1948",
         "sourceUrl": "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf",
-        "enabled": true
+        "enabled": true,
+        "scale": 100
       },
       {
         "id": "little",
@@ -393,7 +371,8 @@
         "notation": "L is the mean number of items in the system; λ is the effective arrival rate; W is the mean time spent there. Use consistent system boundaries and a stable regime with finite long-run averages.",
         "sourceLabel": "Little · A Proof for the Queuing Formula L = λW, 1961",
         "sourceUrl": "https://doi.org/10.1287/opre.9.3.383",
-        "enabled": true
+        "enabled": true,
+        "scale": 100
       },
       {
         "id": "bayes",
@@ -404,7 +383,8 @@
         "notation": "A is a hypothesis, such as an anomalous state; E is observed evidence. P(A) is the prior and P(A | E) is the posterior. This event-based form requires P(E) > 0.",
         "sourceLabel": "Bayes’ rule · Deep Learning, §3.11",
         "sourceUrl": "https://www.deeplearningbook.org/contents/prob.html",
-        "enabled": true
+        "enabled": true,
+        "scale": 100
       },
       {
         "id": "cross-entropy",
@@ -415,7 +395,8 @@
         "notation": "For one example, y_c is the target probability for class c, p̂_c is the predicted probability, and K is the number of classes. Both probability vectors sum to one. Predictions must be positive wherever targets are positive. Natural logarithms give loss in nats.",
         "sourceLabel": "Cross-entropy · Deep Learning, §3.13",
         "sourceUrl": "https://www.deeplearningbook.org/contents/prob.html",
-        "enabled": true
+        "enabled": true,
+        "scale": 100
       },
       {
         "id": "entropy",
@@ -426,6 +407,132 @@
         "notation": "X is a discrete random variable with probability mass function p(x). Base-two logarithms give bits, and 0 log 0 is defined as 0. Entropy alone does not establish that traffic is anomalous or that a model is calibrated.",
         "sourceLabel": "Shannon · A Mathematical Theory of Communication, 1948",
         "sourceUrl": "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf",
+        "enabled": true,
+        "scale": 100
+      }
+    ]
+  },
+  "sizes": {
+    "overall": 100,
+    "body": 100,
+    "hero": 100,
+    "headings": 100,
+    "cardTitles": 100,
+    "labels": 100,
+    "equations": 100,
+    "tilePadding": 100,
+    "pdfHeight": 100,
+    "sectionSpacing": 100,
+    "gridGap": 100,
+    "contentWidth": 84,
+    "projectColumns": 2,
+    "paperColumns": 2,
+    "resourceColumns": 3,
+    "equationColumns": 2
+  },
+  "motion": {
+    "dance": 100,
+    "speed": 90,
+    "coupling": 200,
+    "spacing": 10,
+    "thickness": 150,
+    "opacity": 160
+  },
+  "journey": {
+    "eyebrow": "02 / The journey",
+    "heading": "A life of learning.\nA few turning points.",
+    "intro": "Networks, security, machine learning, and music. Different chapters, connected by the same curiosity.",
+    "sourceLabel": "View the introduction & career slides",
+    "sourceUrl": "pdfs/network-security-week-1.pdf#page=2",
+    "items": [
+      {
+        "year": "2010",
+        "category": "Beginnings",
+        "title": "Computer networks",
+        "organization": "A continuing education",
+        "location": "H-12, Islamabad",
+        "description": "The opening chapter: learning how networks connect people, information, and systems.",
+        "enabled": true
+      },
+      {
+        "year": "2012",
+        "category": "Education",
+        "title": "BE · Electronics Engineering",
+        "organization": "NUST · School of Electrical Engineering & Computer Science",
+        "location": "Islamabad, Pakistan",
+        "description": "An engineering foundation for the work in systems and security that followed.",
+        "enabled": true
+      },
+      {
+        "year": "2014",
+        "category": "Security",
+        "title": "Malware Analyst",
+        "organization": "Ebryx / FireEye",
+        "location": "Lahore, Pakistan",
+        "description": "Working with malware analysis, at the intersection of software behavior and security.",
+        "enabled": true
+      },
+      {
+        "year": "2016",
+        "category": "Education",
+        "title": "MS · Computer Science",
+        "organization": "University of New Mexico",
+        "location": "Albuquerque, USA",
+        "description": "Graduate study focused on machine learning and data.",
+        "enabled": true
+      },
+      {
+        "year": "2017",
+        "category": "Fellowship",
+        "title": "Open Technology Fund Fellow",
+        "organization": "Open Technology Fund · UMass Amherst",
+        "location": "Massachusetts, USA",
+        "description": "A fellowship chapter connecting technology, research, and security.",
+        "enabled": true
+      },
+      {
+        "year": "2018",
+        "category": "Machine learning",
+        "title": "ML Engineer",
+        "organization": "University of New Mexico",
+        "location": "Albuquerque, USA",
+        "description": "Engineering with machine learning and data-driven methods.",
+        "enabled": true
+      },
+      {
+        "year": "2023",
+        "category": "Creative practice",
+        "title": "Music Producer · EDM",
+        "organization": "Dunaway Productions",
+        "location": "Albuquerque, USA",
+        "description": "Another way to explore patterns: rhythm, sound, and electronic music.",
+        "enabled": true
+      },
+      {
+        "year": "2025",
+        "category": "Public service & data",
+        "title": "Lead Data Steward",
+        "organization": "State Government of New Mexico",
+        "location": "New Mexico, USA",
+        "description": "A role centered on the stewardship of data in state government.",
+        "enabled": true
+      },
+      {
+        "year": "2026",
+        "category": "Education · In progress",
+        "title": "PhD Candidate · Unsupervised ML",
+        "organization": "University of New Mexico · ABD / PhD Candidate",
+        "location": "Albuquerque, USA",
+        "description": "Ongoing doctoral research in unsupervised machine learning and changing data streams.",
+        "enabled": true
+      },
+      {
+        "year": "2026",
+        "category": "Teaching & research",
+        "title": "Research Faculty",
+        "organization": "NCSA · Air University",
+        "location": "Islamabad, Pakistan",
+        "description": "Teaching networks, AI, and security while continuing research on learning from changing data.",
         "enabled": true
       }
     ]
