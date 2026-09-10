@@ -8,8 +8,8 @@
     "accent": "#f4c4ad",
     "signalA": "#f3ae89",
     "signalB": "#8992b8",
-    "panel": "#15161A",
-    "panelText": "#EFEFEB"
+    "panel": "#090a0d",
+    "panelText": "#f4f3ef"
   },
   "profile": {
     "name": "Adnan Bashir",
@@ -353,30 +353,30 @@
     ]
   },
   "sizes": {
-    "overall": 100,
-    "body": 80,
-    "hero": 70,
-    "headings": 75,
+    "overall": 70,
+    "body": 132,
+    "hero": 150,
+    "headings": 100,
     "cardTitles": 100,
-    "labels": 100,
-    "equations": 100,
-    "tilePadding": 100,
+    "labels": 160,
+    "equations": 60,
+    "tilePadding": 71,
     "pdfHeight": 100,
-    "sectionSpacing": 100,
-    "gridGap": 100,
-    "contentWidth": 84,
+    "sectionSpacing": 170,
+    "gridGap": 84,
+    "contentWidth": 70,
     "projectColumns": 2,
     "paperColumns": 2,
     "resourceColumns": 3,
     "equationColumns": 2
   },
   "motion": {
-    "dance": 80,
+    "dance": 100,
     "speed": 100,
-    "coupling": 15,
+    "coupling": 200,
     "spacing": 4,
     "thickness": 150,
-    "opacity": 160
+    "opacity": 126
   },
   "journey": {
     "eyebrow": "02 / The journey",
@@ -386,12 +386,12 @@
     "sourceUrl": "pdfs/network-security-week-1.pdf#page=2",
     "items": [
       {
-        "year": "2010",
+        "year": "2008",
         "category": "Beginnings",
-        "title": "Computer networks",
-        "organization": "A continuing education",
+        "title": "Went to NUST",
+        "organization": "",
         "location": "H-12, Islamabad",
-        "description": "The opening chapter: learning how networks connect people, information, and systems.",
+        "description": "Had no idea about anything",
         "enabled": true
       },
       {
@@ -476,5 +476,155 @@
         "enabled": true
       }
     ]
+  },
+  "_studio": {
+    "version": 2,
+    "fonts": {
+      "body": "original",
+      "headings": "original"
+    },
+    "layout": {
+      "heroAlign": "left",
+      "heroHeight": 11,
+      "lineHeight": 0,
+      "cornerRadius": 0,
+      "cardBorder": 3,
+      "headerPosition": "sticky",
+      "imageRatio": "3 / 4",
+      "imageFit": "cover",
+      "cardShadow": 60
+    },
+    "sections": [
+      {
+        "id": "home",
+        "label": "Hero",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "about",
+        "label": "About",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "journey",
+        "label": "Journey",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "research",
+        "label": "Research",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "papers",
+        "label": "Papers",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "teaching",
+        "label": "Teaching",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "exploration",
+        "label": "Exploration",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "mathematics",
+        "label": "Mathematical notes",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "projects",
+        "label": "Selected projects",
+        "enabled": true,
+        "background": "",
+        "padding": 0
+      },
+      {
+        "id": "resources",
+        "label": "Teaching PDFs",
+        "enabled": false,
+        "background": "",
+        "padding": 0
+      }
+    ],
+    "navigation": [
+      {
+        "label": "About",
+        "href": "#about",
+        "enabled": true
+      },
+      {
+        "label": "Journey",
+        "href": "#journey",
+        "enabled": true
+      },
+      {
+        "label": "Research",
+        "href": "#research",
+        "enabled": true
+      },
+      {
+        "label": "Papers",
+        "href": "#papers",
+        "enabled": true
+      },
+      {
+        "label": "Teaching",
+        "href": "#teaching",
+        "enabled": true
+      },
+      {
+        "label": "Projects",
+        "href": "projects.html",
+        "enabled": true
+      }
+    ],
+    "motion": {
+      "enabled": true,
+      "autoplay": true,
+      "showButton": true,
+      "showRipple": false
+    },
+    "counter": {
+      "enabled": true,
+      "endpoint": "https://hits.sh/ml-adnan-bashir.github.io/portfolio.svg?label=Page%20visits&color=f4c4ad&labelColor=090a0d&style=flat",
+      "label": "Page visits",
+      "color": "#f4c4ad",
+      "labelColor": "#090a0d",
+      "align": "original",
+      "style": "flat",
+      "height": 20
+    },
+    "seo": {
+      "homeTitle": "Adnan Bashir — Research, teaching & exploration",
+      "projectsTitle": "Projects — Adnan Bashir",
+      "canonical": "",
+      "socialTitle": "",
+      "socialDescription": "",
+      "socialImage": "",
+      "favicon": "",
+      "robots": "index,follow"
+    },
+    "customCSS": "",
+    "customSections": []
   }
 }
