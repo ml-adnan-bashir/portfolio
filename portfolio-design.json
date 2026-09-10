@@ -13,7 +13,7 @@
   },
   "profile": {
     "name": "Adnan Bashir",
-    "degree": "ABD / PhD Candidate",
+    "degree": "Ph.D Machine Learning",
     "description": "Adnan Bashir — AI and time-series researcher, cybersecurity educator, and PhD candidate. Teaching and research at the intersection of intelligence, security, and visual exploration.",
     "footerLine": "Research. Teaching. Exploration.",
     "independence": "An independent personal website.",
@@ -21,10 +21,10 @@
     "tributeUrl": "https://openai.com/index/gpt-6-astra/"
   },
   "hero": {
-    "eyebrow": "Researcher · Educator · PhD candidate",
-    "line1": "Finding patterns.",
-    "line2": "Asking",
-    "emphasis": "why.",
+    "eyebrow": "ML Researcher · AI Educator · Audiophile",
+    "line1": "",
+    "line2": "",
+    "emphasis": "AI x Art x ML",
     "intro": "I’m Adnan Bashir. I study how machines learn from changing data, teach cybersecurity, and build tools that make complex ideas visible.",
     "cta": "Explore my work"
   },
@@ -354,12 +354,12 @@
   },
   "sizes": {
     "overall": 100,
-    "body": 100,
-    "hero": 100,
-    "headings": 100,
+    "body": 80,
+    "hero": 70,
+    "headings": 75,
     "cardTitles": 100,
     "labels": 100,
-    "equations": 85,
+    "equations": 100,
     "tilePadding": 100,
     "pdfHeight": 100,
     "sectionSpacing": 100,
@@ -371,10 +371,10 @@
     "equationColumns": 2
   },
   "motion": {
-    "dance": 100,
-    "speed": 90,
-    "coupling": 200,
-    "spacing": 10,
+    "dance": 80,
+    "speed": 100,
+    "coupling": 15,
+    "spacing": 4,
     "thickness": 150,
     "opacity": 160
   },
@@ -382,7 +382,7 @@
     "eyebrow": "02 / The journey",
     "heading": "A life of learning.\nA few turning points.",
     "intro": "Networks, security, machine learning, and music. Different chapters, connected by the same curiosity.",
-    "sourceLabel": "View the introduction & career slides",
+    "sourceLabel": "",
     "sourceUrl": "pdfs/network-security-week-1.pdf#page=2",
     "items": [
       {

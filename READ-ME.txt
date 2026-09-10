@@ -1,9 +1,9 @@
 PORTFOLIO WEBSITE UPDATE
 
-Replace index.html and projects.html in your existing website. Keep your apps/ folder. This update includes the supplied PDFs and their first-page previews in pdfs/ and previews/. Keep those folders beside index.html. The exported pages contain their own CSS, MathML, and signal code.
+Replace index.html and projects.html in your existing website. Keep your apps/ folder. This update includes the supplied PDFs and their first-page previews in pdfs/ and previews/. Keep those folders beside index.html. The exported pages contain their own CSS, embedded Computer Modern fonts, MathML, and spiral signal code.
 
 This ZIP updates the website pages and bundled documents; it does not include your app files. Your original complete portfolio package contains those apps. New custom PDF and image links must point to files you add separately or to existing online URLs.
 
 Keep portfolio-design.json to continue editing. Open index-builder.html and choose Open design. You can also reopen either exported HTML page in the builder.
 
-Generated 2026-09-10T01:09:06.351Z
+Generated 2026-09-10T13:29:39.363Z
