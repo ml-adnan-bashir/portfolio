@@ -8,8 +8,8 @@
     "accent": "#f4c4ad",
     "signalA": "#f3ae89",
     "signalB": "#8992b8",
-    "panel": "#090a0d",
-    "panelText": "#f4f3ef"
+    "panel": "#15161A",
+    "panelText": "#EFEFEB"
   },
   "profile": {
     "name": "Adnan Bashir",
@@ -353,30 +353,30 @@
     ]
   },
   "sizes": {
-    "overall": 70,
-    "body": 132,
-    "hero": 150,
-    "headings": 100,
+    "overall": 100,
+    "body": 80,
+    "hero": 70,
+    "headings": 75,
     "cardTitles": 100,
-    "labels": 160,
-    "equations": 60,
-    "tilePadding": 71,
+    "labels": 100,
+    "equations": 100,
+    "tilePadding": 100,
     "pdfHeight": 100,
-    "sectionSpacing": 170,
-    "gridGap": 84,
-    "contentWidth": 70,
+    "sectionSpacing": 100,
+    "gridGap": 100,
+    "contentWidth": 84,
     "projectColumns": 2,
     "paperColumns": 2,
     "resourceColumns": 3,
     "equationColumns": 2
   },
   "motion": {
-    "dance": 100,
+    "dance": 80,
     "speed": 100,
-    "coupling": 200,
+    "coupling": 15,
     "spacing": 4,
     "thickness": 150,
-    "opacity": 126
+    "opacity": 160
   },
   "journey": {
     "eyebrow": "02 / The journey",
@@ -386,12 +386,12 @@
     "sourceUrl": "pdfs/network-security-week-1.pdf#page=2",
     "items": [
       {
-        "year": "2008",
+        "year": "2010",
         "category": "Beginnings",
-        "title": "Went to NUST",
-        "organization": "",
-        "location": "H-12, Islamabad",
-        "description": "Had no idea about anything",
+        "title": "Started BE(EE)",
+        "organization": "NUST",
+        "location": "",
+        "description": "No idea about anything",
         "enabled": true
       },
       {
@@ -484,15 +484,15 @@
       "headings": "original"
     },
     "layout": {
-      "heroAlign": "left",
-      "heroHeight": 11,
+      "heroAlign": "original",
+      "heroHeight": 0,
       "lineHeight": 0,
       "cornerRadius": 0,
-      "cardBorder": 3,
-      "headerPosition": "sticky",
-      "imageRatio": "3 / 4",
+      "cardBorder": 1,
+      "headerPosition": "original",
+      "imageRatio": "1 / 1",
       "imageFit": "cover",
-      "cardShadow": 60
+      "cardShadow": 0
     },
     "sections": [
       {
@@ -602,7 +602,7 @@
       "enabled": true,
       "autoplay": true,
       "showButton": true,
-      "showRipple": false
+      "showRipple": true
     },
     "counter": {
       "enabled": true,

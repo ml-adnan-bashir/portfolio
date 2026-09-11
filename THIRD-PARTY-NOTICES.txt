@@ -20,4 +20,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-JSZip is included in index-builder.html under its embedded MIT license notice.
+JSZip is included in builder/jszip.min.js under its embedded MIT/GPL license notice. KaTeX is included in builder/katex.min.js. Both were preserved from the supplied builder.

@@ -1,3 +1,9 @@
+# Current portfolio builder
+
+Open `index-builder.html` and follow [BUILDER-README.md](BUILDER-README.md). This builder loads the current supplied pages, adds expanded customization, and saves updates into your chosen local portfolio folder. The documentation below describes the earlier portfolio package.
+
+---
+
 # Adnan Bashir — Portfolio + Website Builder
 
 ## Start here

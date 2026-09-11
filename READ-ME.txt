@@ -1,9 +1,13 @@
-PORTFOLIO WEBSITE UPDATE
+PORTFOLIO BUILDER — START HERE
 
-Replace index.html and projects.html in your existing website. Keep your apps/ folder. This update includes the supplied PDFs and their first-page previews in pdfs/ and previews/. Keep those folders beside index.html. The exported pages contain their own CSS, embedded Computer Modern fonts, MathML, and spiral signal code.
+1. Open index-builder.html in desktop Chrome or Edge.
+2. Choose Open portfolio folder and select this portfolio directory.
+3. Customize the loaded portfolio and use Save to folder.
+4. Review, commit, and push with Git.
 
-This ZIP updates the website pages and bundled documents; it does not include your app files. Your original complete portfolio package contains those apps. New custom PDF and image links must point to files you add separately or to existing online URLs.
+The included starting pages are exactly the latest pages supplied in your ZIP.
+Save also updates the builder defaults, so your next session starts from the
+saved version. The alternate index-builder(1).html opens the same new builder.
 
-Keep portfolio-design.json to continue editing. Open index-builder.html and choose Open design. You can also reopen either exported HTML page in the builder.
-
-Generated 2026-09-10T13:29:39.363Z
+Keep builder/ and builder-defaults.js beside index-builder.html.
+See BUILDER-README.md for all controls, backup behavior, and the ZIP fallback.
