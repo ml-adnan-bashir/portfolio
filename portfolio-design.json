@@ -172,9 +172,10 @@
       "description": "A browser speed test with an instrument-style dashboard for download speed, upload speed, and latency.",
       "features": "Analog and digital gauges · configurable appearance · connection measurements",
       "note": "An internet connection is required.",
-      "url": "apps/raftar/index.html",
+      "url": "apps/custom/NCCPL-Report-App-mu0cpf9t-nt5a.html",
       "enabled": true,
-      "featured": true
+      "featured": true,
+      "image": "media/pngtree-shiny-3d-gold-dollar-sign-symbol-for-finance-and-wealth-png-image_20614932-mu0cohrr-49b8.png"
     },
     {
       "id": "zarb",
@@ -235,6 +236,20 @@
       "url": "apps/tilt-scale/index.html",
       "enabled": true,
       "featured": false
+    },
+    {
+      "id": "PSX",
+      "name": "PSX",
+      "category": "Project",
+      "mark": "↗",
+      "description": "",
+      "features": "",
+      "note": "",
+      "url": "",
+      "image": "media/283e11ac-a3b1-42af-9138-41e26777680d-mu0cndue-nzsz.avif",
+      "imageAlt": "",
+      "enabled": true,
+      "featured": true
     }
   ],
   "papers": {
