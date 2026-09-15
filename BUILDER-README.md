@@ -15,7 +15,23 @@ Opening a folder loads its current pages. If you open the builder directly witho
 
 An older browser draft is offered with a separate **Restore draft** button. It never replaces your current files automatically.
 
-## Customization controls
+## Add PSX Email FFC or another HTML app
+
+1. Open **index-builder.html**, choose **Open portfolio folder**, and select this extracted folder.
+2. Choose **Project tiles & images** in the Customize menu.
+3. Open **PSX Email FFC**, then click **Attach HTML file to this tile** and select your completed HTML file. Its tile is already on the homepage and project gallery; attaching the file activates its link.
+4. Edit the name, category, description, short mark, and optional tile image. **Feature on homepage** controls homepage placement; **Show on the website** controls visibility everywhere.
+5. Click **Save to folder**, or use **Download update ZIP** and merge the downloaded files into this same portfolio folder. Review, commit, and push as usual.
+
+For a new app, click **+ Add HTML app**. Its page title supplies the initial tile name, which you can edit. You can also open one of **New HTML app 1–3** and attach a file. Those spare slots are hidden initially; attaching a file turns the slot on. Use **+ Add project** for further slots. There is no three-app limit.
+
+The PSX tile shows **Coming soon** until an app is attached. It has no empty or broken link. A visible tile with **App is ready to open** off, or with a blank Link, also shows Coming soon. No dummy PSX app page is included.
+
+**Download index.html** exports the complete current homepage, including its design and editable state. This is useful when replacing the homepage alone. To include a newly uploaded app, matching `projects.html`, and refreshed builder defaults, use **Save to folder** or **Download update ZIP**.
+
+The upload control copies standalone HTML files into `apps/custom/` with unique names and updates links automatically. For an app with separate JavaScript, CSS, or images, copy its complete folder into `apps/` and enter its relative **Link**, such as `apps/psx-email-ffc/index.html`. Then turn on **App is ready to open** and **Show on the website**. Uploaded HTML is not executed in the builder preview.
+
+## All customization controls
 
 | Area | Controls |
 | --- | --- |
@@ -44,6 +60,7 @@ Uploaded HTML apps should be standalone files. For an app with other scripts, st
 
 - `index.html` and `projects.html`: current page content and styling. A completely unchanged page is preserved exactly.
 - `portfolio-design.json`: editable content and builder settings.
+- `projects-data.json`: a generated project manifest matching the saved pages. Edit tiles in the builder; editing this manifest alone does not change the pages.
 - `builder-defaults.js`: refreshed starting pages and preview images.
 - Referenced uploaded files: new images, PDFs, or standalone HTML apps.
 - An ignore rule for local backups, if the rule is missing.
@@ -58,7 +75,7 @@ Saving changes files on your computer; **Git commit and push remain your next st
 
 ## If direct folder access is unavailable
 
-Use **Download update ZIP**, then merge its contents into the existing portfolio directory. Keep your original `builder/`, `apps/`, `pdfs/`, and `previews/` folders. This update ZIP contains current pages, settings, refreshed defaults, and referenced new uploads; it is not a fresh copy of the complete app/PDF collection.
+Use **Download update ZIP**, then merge its contents into the existing portfolio directory. Keep your original `builder/`, `apps/`, `pdfs/`, and `previews/` folders. This update ZIP contains current pages, settings, project manifest, refreshed defaults, and referenced new uploads; it is not a fresh copy of the complete app/PDF collection. The supplied `portfolio-master.zip` is the complete portfolio package.
 
 If Chrome or Edge blocks folder access for a directly opened file, run this in the portfolio folder:
 
@@ -76,4 +93,4 @@ The existing counter service and identifier are retained. Builder previews remov
 
 ## Verification
 
-The supplied pages match the packaged builder defaults byte for byte. JavaScript syntax, current design/LaTeX validation, relative asset references, directory-save backups, collision handling, stale-file protection, repeated-save behavior, and failure rollback were checked. Interactive browser/visual testing was not performed.
+The supplied pages match the packaged builder defaults byte for byte. The HTML tile update is checked for JavaScript syntax, design/LaTeX validity, tile visibility and link states, complete index export, upload byte preservation, synchronized metadata, relative references, and preservation of the original assets. Browser rendering was not available in this editing environment.

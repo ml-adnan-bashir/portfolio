@@ -165,6 +165,21 @@
   },
   "projects": [
     {
+      "id": "psx-email-ffc",
+      "name": "PSX Email",
+      "category": "Market reporting",
+      "mark": "PSX",
+      "description": "An upcoming workspace for PSX reporting. ",
+      "features": "",
+      "note": "",
+      "url": "apps/custom/NCCPL-Report-App-mu2t1eal-iyyf.html",
+      "image": "",
+      "imageAlt": "",
+      "enabled": true,
+      "featured": true,
+      "ready": true
+    },
+    {
       "id": "raftar",
       "name": "RAFTAR",
       "category": "Network utility",
@@ -172,10 +187,9 @@
       "description": "A browser speed test with an instrument-style dashboard for download speed, upload speed, and latency.",
       "features": "Analog and digital gauges · configurable appearance · connection measurements",
       "note": "An internet connection is required.",
-      "url": "apps/custom/NCCPL-Report-App-mu0cpf9t-nt5a.html",
+      "url": "apps/raftar/index.html",
       "enabled": true,
-      "featured": true,
-      "image": "media/pngtree-shiny-3d-gold-dollar-sign-symbol-for-finance-and-wealth-png-image_20614932-mu0cohrr-49b8.png"
+      "featured": true
     },
     {
       "id": "zarb",
@@ -238,18 +252,64 @@
       "featured": false
     },
     {
-      "id": "PSX",
-      "name": "PSX",
+      "id": "html-slot-1",
+      "name": "New HTML app 1",
+      "category": "HTML app",
+      "mark": "↗",
+      "description": "",
+      "features": "",
+      "note": "",
+      "url": "",
+      "image": "",
+      "imageAlt": "",
+      "enabled": false,
+      "featured": true,
+      "ready": false
+    },
+    {
+      "id": "html-slot-2",
+      "name": "New HTML app 2",
+      "category": "HTML app",
+      "mark": "↗",
+      "description": "",
+      "features": "",
+      "note": "",
+      "url": "",
+      "image": "",
+      "imageAlt": "",
+      "enabled": false,
+      "featured": true,
+      "ready": false
+    },
+    {
+      "id": "html-slot-3",
+      "name": "New HTML app 3",
+      "category": "HTML app",
+      "mark": "↗",
+      "description": "",
+      "features": "",
+      "note": "",
+      "url": "",
+      "image": "",
+      "imageAlt": "",
+      "enabled": false,
+      "featured": true,
+      "ready": false
+    },
+    {
+      "id": "project-mu2t7e2w",
+      "name": "New project",
       "category": "Project",
       "mark": "↗",
       "description": "",
       "features": "",
       "note": "",
       "url": "",
-      "image": "media/283e11ac-a3b1-42af-9138-41e26777680d-mu0cndue-nzsz.avif",
+      "image": "",
       "imageAlt": "",
       "enabled": true,
-      "featured": true
+      "featured": true,
+      "ready": false
     }
   ],
   "papers": {

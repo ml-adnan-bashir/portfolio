@@ -2,8 +2,18 @@ PORTFOLIO BUILDER — START HERE
 
 1. Open index-builder.html in desktop Chrome or Edge.
 2. Choose Open portfolio folder and select this portfolio directory.
-3. Customize the loaded portfolio and use Save to folder.
-4. Review, commit, and push with Git.
+3. Choose Project tiles & images from the Customize menu.
+4. Open PSX Email FFC and click Attach HTML file to this tile.
+   Choose your completed PSX app. The link activates automatically.
+5. For more apps, click + Add HTML app, or use one of the three spare slots.
+   Rename the tile and edit its description or image as needed.
+6. Save to folder, or Download update ZIP and merge it into this folder.
+7. Review, commit, and push with Git.
+
+Download index.html returns your COMPLETE homepage. To include uploaded
+HTML apps and the matching projects page, use Save to folder or the update ZIP.
+PSX Email FFC shows Coming soon until you attach its file. The three spare
+slots stay hidden until used. No dummy app pages are included.
 
 The included starting pages are exactly the latest pages supplied in your ZIP.
 Save also updates the builder defaults, so your next session starts from the

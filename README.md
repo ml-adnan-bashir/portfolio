@@ -2,6 +2,8 @@
 
 Open `index-builder.html` and follow [BUILDER-README.md](BUILDER-README.md). This builder loads the current supplied pages, adds expanded customization, and saves updates into your chosen local portfolio folder. The documentation below describes the earlier portfolio package.
 
+**HTML tile update:** PSX Email FFC is the first selected tile. In **Project tiles & images**, open that tile and choose **Attach HTML file to this tile**. Use **+ Add HTML app** for more apps, or attach a file to one of the three hidden spare slots. **Download index.html** returns the complete homepage; **Save to folder** or **Download update ZIP** also includes uploaded files and the matching projects page. See [the current instructions](BUILDER-README.md#add-psx-email-ffc-or-another-html-app).
+
 ---
 
 # Adnan Bashir — Portfolio + Website Builder
