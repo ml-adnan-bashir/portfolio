@@ -1,0 +1,52 @@
+UPLOAD GUIDE — portfolio update
+
+1. Extract this ZIP. Upload its contents into the ROOT of your existing GitHub repository, keeping the folders as shown. Do not upload the ZIP itself or an enclosing changed-files folder.
+2. Replace index.html and projects.html. Add the other files and lecture-apps folder. Keep all existing apps, pdfs, previews, builder files, and other assets.
+3. Commit your upload and allow your existing GitHub Pages deployment to finish.
+
+APP UPDATES — only one HTML file needs replacement for a self-contained app.
+Rename your finished app to the exact slot filename below, then replace that file in GitHub. Links already point there; no homepage or configuration edit is needed. Do NOT re-upload the original placeholders after replacing them with real apps.
+
+CS-344 — Artificial Intelligence
+  lecture-apps/cs-344/activity1.html
+  lecture-apps/cs-344/activity2.html
+  lecture-apps/cs-344/activity3.html
+
+CS-260 — Computer Networks
+  lecture-apps/cs-260/activity1.html
+  lecture-apps/cs-260/activity2.html
+  lecture-apps/cs-260/activity3.html
+
+CY-752 — Cloud Security
+  lecture-apps/cy-752/activity1.html
+  lecture-apps/cy-752/activity2.html
+  lecture-apps/cy-752/activity3.html
+
+Example: rename lecture-app.html or test.html to activity1.html and replace lecture-apps/cs-344/activity1.html for AI activity 1. Keep the filename and folder unchanged for future updates.
+
+The directory uses permanent Activity 1 / Activity 2 / Activity 3 labels, so it does not need editing when you upload an app. The coming-soon message lives inside the placeholder and disappears when that HTML is replaced.
+
+If an app needs separate images, scripts, styles, or data, upload those dependencies too, using the paths expected by that HTML. Browser-only apps work on GitHub Pages; server-side code needs its own service. Existing cached pages may need a refresh after deployment.
+
+Navigation: Home is a brief introduction. About includes Journey. Research includes Papers and Mathematical Notes. Projects contains the existing project directory. Teaching has the three courses. Lecture Apps has nine linked placeholders. Existing index.html section bookmarks redirect to their new pages.
+
+The original index builder is unchanged. Its old export template does not include this page organization; exporting over these pages with that builder will overwrite this update. Maintain these pages directly unless the builder is updated separately.
+
+FILES INCLUDED
+about.html
+index.html
+lecture-apps/cs-260/activity1.html
+lecture-apps/cs-260/activity2.html
+lecture-apps/cs-260/activity3.html
+lecture-apps/cs-344/activity1.html
+lecture-apps/cs-344/activity2.html
+lecture-apps/cs-344/activity3.html
+lecture-apps/cy-752/activity1.html
+lecture-apps/cy-752/activity2.html
+lecture-apps/cy-752/activity3.html
+lecture-apps.html
+navigation.css
+projects.html
+research.html
+teaching.html
+UPLOAD-GUIDE.txt
