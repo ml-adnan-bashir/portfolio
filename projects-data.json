@@ -162,21 +162,21 @@
     "highlight": true
   },
   {
-    "id": "project-mvcwlbq4",
-    "name": "Minhaj Fon Gas ",
+    "id": "project-mu2t7e2w",
+    "name": "New project",
     "category": "Project",
     "mark": "↗",
     "description": "",
     "features": "",
     "note": "",
-    "url": "apps/custom/phonegas.html",
+    "url": "",
     "image": "",
     "imageAlt": "",
     "enabled": true,
     "featured": true,
-    "ready": true,
-    "slug": "project-mvcwlbq4",
-    "file": "apps/custom/phonegas.html",
+    "ready": false,
+    "slug": "project-mu2t7e2w",
+    "file": "",
     "highlight": true
   }
 ]

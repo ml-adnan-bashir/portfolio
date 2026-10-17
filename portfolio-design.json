@@ -297,19 +297,19 @@
       "ready": false
     },
     {
-      "id": "project-mvcwlbq4",
-      "name": "Minhaj Fon Gas ",
+      "id": "project-mu2t7e2w",
+      "name": "New project",
       "category": "Project",
       "mark": "↗",
       "description": "",
       "features": "",
       "note": "",
-      "url": "apps/custom/phonegas.html",
+      "url": "",
       "image": "",
       "imageAlt": "",
       "enabled": true,
       "featured": true,
-      "ready": true
+      "ready": false
     }
   ],
   "papers": {
@@ -461,7 +461,7 @@
     "sourceUrl": "pdfs/network-security-week-1.pdf#page=2",
     "items": [
       {
-        "year": "2008",
+        "year": "2010",
         "category": "Beginnings",
         "title": "Started BE(EE)",
         "organization": "NUST",
