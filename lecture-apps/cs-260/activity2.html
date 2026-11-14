@@ -1,1 +1,203 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CS-260 · Activity 2</title><style>body{margin:0;background:#090a0d;color:#f4f3ef;font:18px/1.6 Georgia,serif;min-height:100svh;display:grid;place-items:center}main{max-width:580px;padding:40px 24px}p{color:#b9bdc8}h1{font-weight:400;font-size:48px;line-height:1.1}a{color:#f4c4ad;text-underline-offset:6px}.tag{font:13px monospace;letter-spacing:1px;color:#f4c4ad}</style></head><body><main><div class="tag">CS-260 / ACTIVITY 02</div><h1>Computer Networks</h1><p>This activity is coming soon. Your instructor will add the lecture app here.</p><a href="../../lecture-apps.html#cs-260">← Back to lecture apps</a></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101d23"><title>Packet Studio · CS260 Routing Lab</title>
+<style>
+:root{color-scheme:light;--ink:#172b33;--muted:#536971;--line:#cdd8da;--paper:#f3f6f5;--teal:#00796c;--blue:#205bc3;--red:#ad3945;--mono:"IBM Plex Mono",Consolas,"Liberation Mono",monospace;--sans:Inter,"Segoe UI",Arial,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.48 var(--sans)}button,select,input{font:inherit;color:inherit}button,select{cursor:pointer}button{border:1px solid var(--line);border-radius:7px;background:white;padding:8px 13px;font-weight:640}button:hover:enabled{border-color:#699294;background:#f1f8f6}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,[role=button]:focus-visible,a:focus-visible{outline:3px solid #e7a829;outline-offset:3px}button:disabled{opacity:.44;cursor:default}button.primary{background:var(--teal);border-color:var(--teal);color:white}button.primary:hover:enabled{background:#005f55}button.dark{background:#1c343c;border-color:#1c343c;color:white}button.small{padding:5px 9px;font-size:12px}button.plain{border:0;background:transparent;color:var(--teal);padding:4px 0}.top{background:#11262d;color:#eff9f7}.top>div,main{max-width:1450px;margin:auto;padding:0 clamp(16px,3.5vw,55px)}.top>div{height:63px;display:flex;align-items:center;gap:13px}.brand{font-weight:730;font-size:20px;letter-spacing:-.7px}.brandmark{width:32px;height:32px}.course{border-left:1px solid #446069;padding-left:16px;color:#b8ced1;font-size:13px}.top a{margin-left:auto;color:#d6e8e8;text-decoration:none;font-weight:600;font-size:13px}.intro{padding:24px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:15px}h1,h2,h3,p{margin:0}h1{font-size:clamp(27px,3vw,43px);line-height:1.08;letter-spacing:-1.6px}.intro p{color:var(--muted);margin-top:7px}.topology-count{font:12px var(--mono);color:var(--muted);white-space:nowrap}.board{display:grid;grid-template-columns:minmax(0,2.3fr) minmax(286px,1fr);gap:16px;align-items:stretch}.panel{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}.panelhead{min-height:52px;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;gap:12px}.panelhead h2,.card h2{font-size:18px;letter-spacing:-.4px}.mono{font-family:var(--mono)}.map{background:#14272e;color:#ebf4f5;display:flex;flex-direction:column}.map .panelhead{border-bottom:1px solid #344b52}.mapStatus{font:12px var(--mono);color:#99dad1}.canvasbox{background-color:#14272e;background-image:radial-gradient(#46616a 0.65px,transparent 0.85px);background-size:17px 17px;position:relative;flex:1;display:flex;align-items:center;justify-content:center}.canvasbox svg{width:100%;height:auto;display:block;max-height:318px}.edge{stroke:#829ca3;stroke-width:2.5;fill:none}.edge.traversed{stroke:#63c7ba}.edge.flowing{stroke:#ffe59d;stroke-width:4}.node{cursor:pointer}.node .hit{fill:transparent;stroke:none}.node .iconframe{fill:#203840;stroke:#86adae;stroke-width:1.5}.nodeB .iconframe{stroke:#8faae9}.nodeRouter .iconframe{stroke:#e3b675;fill:#3e382e}.node.sel .iconframe{stroke:#fff;stroke-width:3}.node.at .iconframe{fill:#3b514b;stroke:#ffe59d;stroke-width:3}.nodetext{fill:#f4f8f8;font:600 13.5px var(--sans)}.address,.porttext{fill:#b6cace;font:11px var(--mono)}.porttext{fill:#bad0d3;font-size:10px;paint-order:stroke;stroke:#14272e;stroke-width:4px;stroke-linejoin:round}.zone{fill:#a5d7d0;font:600 11px var(--mono);letter-spacing:.5px}.zoneB{fill:#b2c9ff}.mapfoot{border-top:1px solid #344b52;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 18px;color:#bed0d2;font-size:12px;flex-wrap:wrap}.legend{display:inline-flex;align-items:center;gap:7px}.dot{display:inline-block;border-radius:50%;background:#ffdf92;width:9px;height:9px}.card{padding:16px 18px}.casecard{display:flex;flex-direction:column}.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.between{justify-content:space-between}.caps{font:700 11px var(--mono);letter-spacing:1.1px;text-transform:uppercase;color:var(--teal)}.casecard select{margin:10px 0;font-weight:680}.casecard p{font-size:14px}.steps{padding-left:20px;color:var(--muted);margin:10px 0 12px;font-size:13px}.steps li+li{margin-top:3px}.caseactions{margin-top:auto}.casecheck{margin-top:10px}.casecheck:empty{display:none}details{font-size:13px}summary{cursor:pointer;font-weight:650}details p{margin:8px 0}.hint{margin:6px 0 12px;color:var(--muted)}.lower{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,1.3fr);gap:16px;margin:16px 0}.controls{display:grid;grid-template-columns:1fr 1fr;gap:9px}.wide{grid-column:1/-1}label{display:block;color:var(--muted);font-size:12px;font-weight:650}select,input[type=number]{display:block;width:100%;border:1px solid #bdcdd0;border-radius:6px;background:#fff;padding:8px 9px;min-height:36px;line-height:1.2;margin-top:4px;font-size:14px}select:disabled{color:#65777c}.traceBtns{margin:13px 0 10px}.traceBtns button{min-width:66px}.state{font:650 12px var(--mono);color:var(--muted)}.result{background:#f2f6f6;border-left:3px solid #9bafb2;border-radius:3px;padding:10px 12px;font-size:14px}.result.good{border-color:var(--teal);background:#ecf7f1}.result.bad{border-color:var(--red);background:#fbeff0}#traceList{list-style:none;padding:0;margin:10px 0 0;max-height:220px;overflow:auto}#traceList li{padding:7px 0;border-top:1px solid #e7eded;display:grid;grid-template-columns:27px 1fr;gap:6px;font-size:13px}#traceList b{font-size:12px}#traceList .n{font:12px var(--mono);color:#6b8589}.fields{font:11px/1.55 var(--mono);color:var(--muted);overflow-wrap:anywhere}.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:0 0 12px}.tabs button{border:0;border-radius:0;padding:8px 10px;background:none;color:var(--muted)}.tabs button[aria-pressed=true]{color:var(--teal);box-shadow:0 2px var(--teal)}.rulegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px 9px}.rulegrid select,.rulegrid input{font-size:13px}.subtext{font-size:13px;color:var(--muted);margin:5px 0 10px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px;text-align:left}th,td{padding:7px 5px;border-bottom:1px solid #dce5e5;vertical-align:middle}th{color:var(--muted);font-weight:650;background:#f4f7f6}tbody tr:last-child td{border-bottom:0}.badge{font:600 11px var(--mono);color:var(--teal)}.badtext{color:var(--red)}.ruleactions{white-space:nowrap}.info{margin:8px 0;color:var(--muted);font-size:13px}.panelbody h3{font-size:15px;margin:12px 0 6px}.notice{min-height:17px;color:var(--teal);font-size:12px;margin:6px 0}.muted{color:var(--muted)}.tests{max-height:200px;overflow:auto;padding:0 0 0 18px;font-size:12px}.tests li{margin:4px 0}.checkok{color:#007061}.checkfail{color:#9a3042}#guide{margin:0 0 20px;padding:15px 18px}#guide summary{font-size:15px}#guide p{max-width:95ch}.hide{display:none!important}.devinfo{padding:10px 13px;background:#f1f6f5;border:1px solid #d6e4e2;border-radius:7px}.devinfo strong{color:#163b3d}.casecheck .result{font-size:12px}.cardhead{margin-bottom:12px}.foot{padding:0 0 22px;color:var(--muted);font:11px var(--mono)}@media(max-width:900px){.board{grid-template-columns:minmax(0,1.6fr) minmax(245px,1fr)}.lower{grid-template-columns:1fr 1.13fr}.topology-count{display:none}.mapfoot{font-size:11px}.card{padding:14px}}@media(max-width:720px){.board,.lower{grid-template-columns:1fr}.canvasbox{overflow-x:auto;display:block}.canvasbox svg{min-width:555px;max-height:none}.course{font-size:11px;padding-left:9px}.top>div{gap:8px}.intro{padding:19px 0 13px}.top a{font-size:12px}.casecard select{max-width:100%}.rulegrid{grid-template-columns:repeat(2,minmax(0,1fr))}.casecard .steps{margin:8px 0}.brand{font-size:17px}.board,.lower{gap:12px}.lower{margin:12px 0}.mapfoot{padding:9px 12px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body>
+<header class="top"><div><svg class="brandmark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#b7ebcc"/><path d="M8 22l8-13 8 13M9 21h14" fill="none" stroke="#12382f" stroke-width="2.3"/><g fill="#12382f"><circle cx="8" cy="22" r="3"/><circle cx="16" cy="9" r="3"/><circle cx="24" cy="22" r="3"/></g></svg><span class="brand">Packet Studio</span><span class="course">CS260 · Week 11</span><a href="#guide" id="guideLink">Lab guide ↘</a></div></header>
+<main><div class="intro"><div><h1>Routing &amp; policy lab</h1><p>Trace a packet between a Starlink field station and a university network.</p></div><span class="topology-count">4 users &nbsp;/&nbsp; 2 switches &nbsp;/&nbsp; 1 router</span></div>
+<div class="board">
+<section class="panel map" aria-label="Interactive network topology"><div class="panelhead"><h2>Network topology</h2><span class="mapStatus" id="mapStatus">Ready to trace</span></div><div class="canvasbox"><svg id="map" viewBox="0 0 780 274" role="group" aria-label="Two users per LAN, linked by switches S1 and S2 and router R1. Select a device to inspect it."></svg></div><div class="mapfoot"><span class="legend"><i class="dot"></i> Current packet</span><span>Select a device to inspect ports and addresses</span></div></section>
+<section class="panel card casecard"><div class="row between"><span class="caps">Guided cases</span><span class="state" id="progress"></span></div><label for="case" class="hide">Choose a guided case</label><select id="case" aria-label="Choose guided case"></select><p id="objective"></p><ol class="steps" id="steps"></ol><details class="hint" id="hint"><summary>Show a hint</summary><p></p></details><div class="caseactions row"><button id="check" class="dark">Check my work</button><button id="reset" class="plain">Reset this case</button></div><div class="casecheck" id="checkResult" aria-live="polite"></div></section>
+</div>
+<div class="lower">
+<section class="panel card"><div class="row between cardhead"><h2>Packet console</h2><span id="stepCount" class="state"></span></div><div class="controls"><label>Source<select id="src"></select></label><label>Destination<select id="dst"></select></label><label class="wide">Traffic<select id="traffic"><option value="ping">Ping · echo request + reply</option><option value="data">UDP · one-way datagram</option></select></label></div>
+<div class="traceBtns row"><button class="primary" id="play">▶ Run</button><button id="step">Step →</button><button id="clear">Rewind</button></div><div class="result" id="status" aria-live="polite"></div><ol id="traceList" aria-label="Packet trace"></ol></section>
+<section class="panel card"><div class="row between cardhead"><h2>Controller workbench</h2><span class="caps">Control plane</span></div><div class="tabs" aria-label="Workbench sections"><button data-tab="policies" aria-pressed="true">Policies</button><button data-tab="routes" aria-pressed="false">Routes</button><button data-tab="device" aria-pressed="false">Device inspector</button></div>
+<div class="panelbody" id="policies"><p class="subtext">Install an ingress rule. The highest matching priority wins. Permit continues normal forwarding.</p><form id="ruleForm"><div class="rulegrid"><label>Install on<select id="dev"></select></label><label>Priority (1–999)<input id="priority" type="number" min="1" max="999" step="1" value="100" required></label><label>Ingress port<select id="inport"></select></label><label>Source<select id="rsrc"></select></label><label>Destination<select id="rdst"></select></label><label>Packet type<select id="rtype"><option value="*">Any IPv4</option><option value="req">Echo request · 8</option><option value="rep">Echo reply · 0</option><option value="data">UDP datagram</option></select></label><label>Action<select id="action"><option value="drop">Drop</option><option value="permit">Permit</option></select></label></div><div class="row" style="margin-top:10px"><button class="primary" id="install">Install rule</button><button type="button" class="hide" id="cancel">Cancel edit</button></div></form><div id="formMsg" class="notice" role="status"></div><div class="row between"><h3>Installed policies</h3><span class="state" id="ruleCount"></span></div><div id="rules"></div></div>
+<div id="routes" class="panelbody hide"></div><div id="device" class="panelbody hide"></div></section>
+</div>
+<details id="guide" class="panel"><summary>Lab guide &amp; model assumptions</summary><p>Select a case, predict the path, then use <b>Step</b> for one decision or <b>Run</b> for automatic playback. Select a device on the map to inspect its interfaces. Read the packet headers beneath each trace entry.</p><p>The field station uses Starlink in the lecture scenario. R1 is the lab’s IP boundary between two directly connected /24 LANs. The satellite, radio link and provider network are abstracted. All devices and packets here are simulated locally.</p><p>Hosts start with resolved neighbour addresses and switches have populated MAC tables. Each host sends remote traffic to its default gateway. R1 checks its routing table, decrements the IPv4 TTL and rewrites the Ethernet header. A reply is a new packet. UDP is a single datagram.</p><p>User policies match IPv4 endpoints, packet type and ingress port before normal forwarding. Source and destination roles reverse on an echo reply. Priority 0 is the fixed permit fallback. Case checks run separate probes and leave your visible counters alone. Case settings are saved in this browser when local storage is available.</p></details><div class="foot">CS260 Computer Networks · Starlink case study</div></main><script>
+'use strict';
+const $=id=>document.getElementById(id);
+const hosts={
+ U1:{name:'Field lead',lan:10,n:11,sw:'S1',port:'1',x:84,y:72},
+ U2:{name:'Field guest',lan:10,n:12,sw:'S1',port:'2',x:84,y:193},
+ U3:{name:'Analyst',lan:20,n:11,sw:'S2',port:'1',x:696,y:72},
+ U4:{name:'Instructor',lan:20,n:12,sw:'S2',port:'2',x:696,y:193}
+};
+const hostIds=Object.keys(hosts), devices=['S1','R1','S2'];
+const nodes={...hosts,S1:{name:'Field switch',x:244,y:132},R1:{name:'Edge router',x:390,y:132},S2:{name:'Campus switch',x:536,y:132}};
+const interfaces={S1:['1','2','3'],R1:['g0','g1'],S2:['1','2','3']};
+const links=[['U1','S1','1'],['U2','S1','2'],['S1','R1','3'],['R1','S2','3'],['S2','U3','1'],['S2','U4','2']];
+const ip=h=>'10.0.'+hosts[h].lan+'.'+hosts[h].n;
+const mac=h=>'02:00:00:'+hosts[h].lan+':00:'+hosts[h].n;
+const gwIP=lan=>'10.0.'+lan+'.1';
+const gwMAC=lan=>'02:00:00:'+lan+':00:01';
+const gport=lan=>lan===10?'g0':'g1';
+const kinds={'*':'Any IPv4',req:'Echo request',rep:'Echo reply',data:'UDP'};
+const fullname=id=>id+' · '+hosts[id].name;
+const opt=(key,label)=>'<option value="'+key+'">'+label+'</option>';
+const H=hostIds.map(id=>opt(id,fullname(id))).join('');
+const tests=(a,b,t,want)=>({a,b,t,want});
+const caseDefs=[
+ {title:'01 · Keep local traffic local',goal:'Stop UDP from the field guest to the field lead. Keep ping working and preserve the reverse UDP path.',steps:['Step through U2 → U1 and look for R1.','Install a policy on the field switch. Test both directions.'],hint:'A local frame crosses S1 only. Match the two hosts and UDP so that echo traffic still passes.',sample:['U2','U1','data'],tests:[tests('U2','U1','data',false),tests('U1','U2','data',true),tests('U2','U1','ping',true),tests('U2','U3','data',true)]},
+ {title:'02 · One-way diagnostics',goal:'The instructor may ping the field lead. Stop the field lead from starting a ping to the instructor. Preserve ordinary UDP traffic.',steps:['Trace U1 → U4 across the subnet boundary.','Drop only the initiating request. Test a ping from U4.'],hint:'Both a request and a reply can leave U1. Only an ICMP type 8 packet from U1 to U4 should be dropped.',sample:['U1','U4','ping'],tests:[tests('U1','U4','ping',false),tests('U4','U1','ping',true),tests('U1','U4','data',true),tests('U1','U3','ping',true),tests('U2','U4','ping',true)]},
+ {title:'03 · A higher-priority exception',goal:'At R1, block echo requests from the field LAN to the university LAN, with one exception: the field lead may ping the analyst.',steps:['Install a broad drop at R1 on its field ingress.','Install a more specific permit above it. Compare rule hits.'],hint:'Use g0 on R1 for both rules. A priority-200 permit for U1 → U3 can override a priority-100 drop for echo requests arriving on g0.',sample:['U1','U3','ping'],tests:[tests('U1','U3','ping',true),tests('U2','U3','ping',false),tests('U1','U4','ping',false),tests('U2','U4','ping',false),tests('U4','U1','ping',true),tests('U2','U3','data',true),tests('U1','U2','ping',true)]},
+ {title:'04 · Repair the return route',goal:'The university receives a request, but its reply stops at R1. Restore two-way routing, then block guest UDP to the instructor.',steps:['Trace U1 → U3 until the reply stops. Inspect R1’s routes.','Restore the field-side route and install the guest UDP policy.'],hint:'The reply destination is in 10.0.10.0/24. Enable its R1 route, then add a drop for UDP from U2 to U4.',sample:['U1','U3','ping'],tests:[tests('U1','U3','ping',true),tests('U3','U1','ping',true),tests('U2','U4','data',false),tests('U2','U4','ping',true),tests('U1','U4','data',true),tests('U2','U3','data',true)]}
+];
+const fresh=i=>({rules:[],routes:{10:i!==3,20:true},passed:false});
+const storageKey='cs260.packetstudio.routing.v1';
+function validRule(r){return r&&Number.isSafeInteger(r.id)&&r.id>0&&devices.includes(r.dev)&&Number.isInteger(r.priority)&&r.priority>=1&&r.priority<=999&&['*',...interfaces[r.dev]].includes(r.port)&&['*',...hostIds].includes(r.src)&&['*',...hostIds].includes(r.dst)&&Object.hasOwn(kinds,r.kind)&&['drop','permit'].includes(r.action)}
+function restore(){
+ const blank=caseDefs.map((_,i)=>fresh(i));
+ try{
+  const saved=JSON.parse(localStorage.getItem(storageKey));
+  return blank.map((v,i)=>{const c=saved?.[i];if(!c||!Array.isArray(c.rules)||!c.rules.every(validRule)||typeof c.routes?.[10]!=='boolean'||typeof c.routes?.[20]!=='boolean')return v;
+   const ids=new Set(c.rules.map(r=>r.id)),slots=new Set(c.rules.map(r=>r.dev+':'+r.priority));if(ids.size!==c.rules.length||slots.size!==c.rules.length)return v;
+   return {rules:c.rules,routes:{10:c.routes[10],20:c.routes[20]},passed:c.passed===true};
+  });
+ }catch{return blank}
+}
+let configs=restore(),current=0,selected='R1',activeTab='policies',editId=null,hits={},events=[],cursor=-1,timer=null;
+function cfg(){return configs[current]}
+function save(){try{localStorage.setItem(storageKey,JSON.stringify(configs))}catch{}}
+function winner(config,node,port,p){return config.rules.filter(r=>r.dev===node&&(r.port==='*'||r.port===port)&&(r.src==='*'||r.src===p.from)&&(r.dst==='*'||r.dst===p.to)&&(r.kind==='*'||r.kind===p.kind)).sort((a,b)=>b.priority-a.priority)[0]}
+function simulate(config,from,to,traffic){
+ const log=[];
+ function leg(a,b,kind){
+  const src=hosts[a],dst=hosts[b],local=src.lan===dst.lan;
+  let p={from:a,to:b,kind,ttl:64,sm:mac(a),dm:local?mac(b):gwMAC(src.lan)};
+  function record(node,prev,title,detail,extra={}){log.push({node,prev,title,detail,p:{...p},...extra})}
+  function inspect(node,port,prev,forward){
+   const r=winner(config,node,port,p);
+   const msg=r?'Rule #'+r.id+' at priority '+r.priority+' matches. ':'Priority 0 default permit. ';
+   if(r?.action==='drop'){record(node,prev,'Policy drop',msg+'Drop on ingress '+port+'.',{rule:r.id,fail:true});return false}
+   const f=forward();record(node,prev,f.title,msg+f.detail,{rule:r?.id,fail:!!f.fail});return !f.fail;
+  }
+  record(a,null,kind==='rep'?'Generate echo reply':'Send '+kinds[kind].toLowerCase(),local?'Destination is on the local /24. Address the Ethernet frame to '+b+'.':'Destination is on another /24. Address the frame to gateway '+gwIP(src.lan)+'.');
+  if(!inspect(src.sw,src.port,a,()=>({title:'Switch forwards',detail:'Ingress '+src.port+'. Destination MAC maps to port '+(local?dst.port:'3')+' → '+(local?b:'R1')+'.'})))return false;
+  let last=src.sw;
+  if(!local){
+   if(!inspect('R1',gport(src.lan),src.sw,()=>{
+    if(!config.routes[dst.lan])return {title:'No route',detail:'No active route to '+ip(b)+' and no default route. Packet dropped.',fail:true};
+    p={...p,ttl:p.ttl-1,sm:gwMAC(dst.lan),dm:mac(b)};
+    return {title:'Router forwards',detail:'10.0.'+dst.lan+'.0/24 matches. Exit '+gport(dst.lan)+'. Replace Ethernet addresses and reduce TTL to '+p.ttl+'.'};
+   }))return false;
+   if(!inspect(dst.sw,'3','R1',()=>({title:'Switch forwards',detail:'Ingress 3. Destination MAC maps to port '+dst.port+' → '+b+'.'})))return false;
+   last=dst.sw;
+  }
+  record(b,last,kind==='req'?'Echo request received':kind==='rep'?'Ping completed':'Datagram delivered',kind==='req'?'The destination will generate a new echo reply.':kind==='rep'?'The initiating user received the reply.':'The destination received the UDP datagram.',{done:kind!=='req'});
+  return true;
+ }
+ const ok=leg(from,to,traffic==='ping'?'req':'data')&&(traffic!=='ping'||leg(to,from,'rep'));
+ return {log,ok};
+}
+function checkCase(index,config){
+ const d=caseDefs[index],result=d.tests.map(t=>{const seen=simulate(config,t.a,t.b,t.t);const good=seen.ok===t.want&&(t.want||seen.log.at(-1).title==='Policy drop');return {label:t.a+' → '+t.b+' · '+(t.t==='ping'?'ping':'UDP')+' · expect '+(t.want?'delivery':'policy drop'),good}});
+ if(index===2){
+ const matches=(a,b)=>winner(config,'R1','g0',{from:a,to:b,kind:'req'});
+ const allow=matches('U1','U3'),deny=matches('U2','U3');
+ result.push({label:'R1 uses a broad field-ingress drop and a higher-priority U1 → U3 permit.',good:!!(deny&&allow&&deny.port==='g0'&&deny.src==='*'&&deny.dst==='*'&&deny.kind==='req'&&deny.action==='drop'&&allow.action==='permit'&&allow.src==='U1'&&allow.dst==='U3'&&allow.kind==='req'&&allow.priority>deny.priority)});
+ }
+ return result;
+}
+function icon(id){
+ if(id==='R1')return '<path d="M-11 0H11M-7 -4L-11 0l4 4M7 -4l4 4-4 4M0 -11v22m-4-18 4-4 4 4m-8 14 4 4 4-4"/>';
+ if(devices.includes(id))return '<rect x="-13" y="-7" width="26" height="14" rx="2"/><path d="M-9 0h3m2 0h3m2 0h3m2 0h3"/>';
+ return '<rect x="-11" y="-9" width="22" height="15" rx="2"/><path d="M-14 9h28m-16-3-1 3m6-3 1 3"/>';
+}
+function mapDraw(){
+ const e=events[cursor],key=(a,b)=>[a,b].sort().join('-'),walk=new Set(events.slice(0,cursor+1).filter(z=>z.prev).map(z=>key(z.node,z.prev)));
+ let html='<text x="21" y="25" class="zone">FIELD STATION · 10.0.10.0/24</text><text x="759" y="25" text-anchor="end" class="zone zoneB">UNIVERSITY · 10.0.20.0/24</text>';
+ for(const [a,b] of links){
+  const p=nodes[a],q=nodes[b],live=e?.prev&&key(e.node,e.prev)===key(a,b);
+  html+='<path class="edge '+(live?'flowing':walk.has(key(a,b))?'traversed':'')+'" d="M'+p.x+' '+p.y+' L'+q.x+' '+q.y+'"/>';
+ }
+ for(const [x,y,t] of [[207,106,'p1'],[207,160,'p2'],[573,106,'p1'],[573,160,'p2'],[278,124,'p3'],[352,124,'g0'],[428,124,'g1'],[502,124,'p3']])html+='<text class="porttext" x="'+x+'" y="'+y+'" text-anchor="middle">'+t+'</text>';
+ for(const [id,p] of Object.entries(nodes)){
+  const h=!!hosts[id],rad=22;
+  html+='<g tabindex="0" role="button" aria-label="Inspect '+id+' '+p.name+'" data-node="'+id+'" class="node '+(id==='R1'?'nodeRouter':id==='S2'||p.lan===20?'nodeB':'')+' '+(activeTab==='device'&&selected===id?'sel':'')+' '+(e?.node===id?'at':'')+'" transform="translate('+p.x+' '+p.y+')"><rect class="hit" x="-61" y="-24" width="122" height="82" rx="8"/><rect class="iconframe" x="-22" y="-22" width="44" height="44" rx="'+(id==='R1'?rad:8)+'"/><g fill="none" stroke="'+(id==='R1'?'#ffcd8a':'#d1e8eb')+'" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+icon(id)+'</g><text class="nodetext" text-anchor="middle" y="39">'+(h?id+' · '+p.name:id+' · '+(id==='R1'?'Router':'Switch'))+'</text><text class="address" text-anchor="middle" y="54">'+(h?ip(id):id==='R1'?'Layer 3':'Layer 2')+'</text></g>';
+ }
+ if(e){const p=nodes[e.node];html+='<circle cx="'+(p.x+18)+'" cy="'+(p.y-17)+'" r="6.5" fill="'+(e.fail?'#ff9b9f':'#ffdf92')+'" stroke="#14272e" stroke-width="2"/>'}
+ $('map').innerHTML=html;
+}
+function pause(){clearInterval(timer);timer=null;$('play').textContent='▶ Run'}
+function rewind(){pause();events=[];cursor=-1;renderTrace()}
+function renderTrace(){
+ const e=events[cursor];$('mapStatus').textContent=e?(e.fail?'Dropped at ':e.done?'Delivered to ':'Packet at ')+e.node:'Ready to trace';
+ $('stepCount').textContent=e?'Step '+(cursor+1)+' / '+events.length:'At start';
+ $('status').className='result'+(e?.fail?' bad':e?.done?' good':'');
+ $('status').textContent=e?e.node+' · '+e.title+' — '+e.detail:'Choose endpoints and traffic, then run or step through the path.';
+ $('traceList').innerHTML=events.slice(0,cursor+1).map((s,i)=>'<li><span class="n">'+String(i+1).padStart(2,'0')+'</span><div><b>'+s.node+' · '+s.title+'</b> · '+kinds[s.p.kind]+'<div>'+s.detail+'</div><div class="fields">IP '+ip(s.p.from)+' → '+ip(s.p.to)+' · TTL '+s.p.ttl+'<br>MAC '+s.p.sm+' → '+s.p.dm+'</div></div></li>').join('');
+ $('traceList').scrollTop=$('traceList').scrollHeight;
+ $('clear').disabled=cursor<0;$('step').disabled=!!timer||!!e&&cursor===events.length-1;mapDraw();
+}
+function advance(){
+ if(!events.length)events=simulate(cfg(),$('src').value,$('dst').value,$('traffic').value).log;
+ if(cursor>=events.length-1){pause();renderTrace();return}
+ const e=events[++cursor];if(e.rule)hits[e.rule]=(hits[e.rule]||0)+1;
+ if(cursor===events.length-1)pause();renderTrace();renderRules();
+}
+function play(){if(timer){pause();renderTrace();return}if(cursor>=0&&cursor===events.length-1)rewind();timer=setInterval(advance,680);$('play').textContent='Ⅱ Pause';advance()}
+function setTab(name){activeTab=name;document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.tab===name));for(const t of ['policies','routes','device'])$(t).classList.toggle('hide',t!==name);renderDevice();mapDraw()}
+function endpoints(source,dest){$('src').value=source;$('dst').innerHTML=hostIds.filter(h=>h!==source).map(h=>opt(h,fullname(h))).join('');if(dest!==source&&hosts[dest])$('dst').value=dest}
+function ports(){const d=$('dev').value;$('inport').innerHTML=opt('*','Any port')+interfaces[d].map(v=>opt(v,v)).join('')}
+function cancelEdit(){editId=null;$('ruleForm').reset();$('dev').value='S1';ports();$('cancel').classList.add('hide');$('install').textContent='Install rule'}
+function alter(){cfg().passed=false;save();$('checkResult').innerHTML='';rewind();renderRules();renderRoutes();renderDevice();progress()}
+function renderRules(){
+ const list=[...cfg().rules].sort((a,b)=>a.dev.localeCompare(b.dev)||b.priority-a.priority);
+ $('ruleCount').textContent=list.length+' custom';
+ let html='<div class="tablewrap"><table><thead><tr><th>Device / priority</th><th>Match</th><th>Action</th><th>Hits</th><th>Manage</th></tr></thead><tbody>';
+ for(const r of list)html+='<tr><td><b>'+r.dev+' / '+r.priority+'</b><br><span class="muted">#'+r.id+'</span></td><td>'+r.src+' → '+r.dst+'<br>'+kinds[r.kind]+' · in '+r.port+'</td><td class="badge '+(r.action==='drop'?'badtext':'')+'">'+r.action+'</td><td class="mono">'+(hits[r.id]||0)+'</td><td class="ruleactions"><button class="small" data-edit="'+r.id+'" aria-label="Edit rule '+r.id+'">Edit</button> <button class="small" data-del="'+r.id+'" aria-label="Delete rule '+r.id+'">×</button></td></tr>';
+ html+='<tr><td>All / 0</td><td>Any IPv4</td><td>permit</td><td>—</td><td>Default</td></tr></tbody></table></div>';$('rules').innerHTML=html;
+}
+function renderRoutes(){
+ $('routes').innerHTML='<h3>R1 · IPv4 routing table</h3><p class="subtext">The most specific active prefix chooses the exit interface. These two networks are directly connected.</p><div class="tablewrap"><table><thead><tr><th>Destination</th><th>Exit</th><th>Router address</th><th>Active</th></tr></thead><tbody>'+[10,20].map(l=>'<tr><td class="mono">10.0.'+l+'.0/24</td><td>'+gport(l)+'</td><td class="mono">'+gwIP(l)+'</td><td><input type="checkbox" aria-label="Enable route 10.0.'+l+'.0/24" data-route="'+l+'" '+(cfg().routes[l]?'checked':'')+'></td></tr>').join('')+'</tbody></table></div><p class="info">No default route. Disabling an entry makes its subnet unreachable through R1. Local switching still works.</p>';
+}
+function renderDevice(){
+ const d=selected,p=nodes[d];let html='<div class="devinfo"><strong>'+d+' · '+p.name+'</strong>';
+ if(hosts[d])html+='<p class="info">IP '+ip(d)+'/24 · Gateway '+gwIP(p.lan)+'<br>MAC '+mac(d)+'<br>Connected to '+p.sw+' on port '+p.port+'.</p>';
+ else if(d==='R1')html+='<p class="info">Check ingress policy, look up the destination IP, then prepare a new Ethernet frame for the next LAN.</p>'+[10,20].map(l=>'<p class="fields">'+gport(l)+' · '+gwIP(l)+'/24 · '+gwMAC(l)+' → S'+(l===10?1:2)+' port 3</p>').join('');
+ else {const l=d==='S1'?10:20;html+='<p class="info">After ingress policy, the switch uses the destination MAC to choose an output port.</p><table><thead><tr><th>Learned MAC</th><th>Port</th><th>Neighbour</th></tr></thead><tbody>'+hostIds.filter(h=>hosts[h].sw===d).map(h=>'<tr><td class="mono">'+mac(h)+'</td><td>'+hosts[h].port+'</td><td>'+fullname(h)+'</td></tr>').join('')+'<tr><td class="mono">'+gwMAC(l)+'</td><td>3</td><td>R1 '+gport(l)+'</td></tr></tbody></table>'}
+ $('device').innerHTML=html+'</div><p class="info">Select any node on the topology to change this view.</p>';
+}
+function progress(){$('progress').textContent=configs.filter(c=>c.passed).length+' / '+caseDefs.length+' solved'}
+function loadCase(i){
+ current=i;hits={};const d=caseDefs[i];$('case').value=i;$('objective').textContent=d.goal;$('steps').innerHTML=d.steps.map(s=>'<li>'+s+'</li>').join('');$('hint').open=false;$('hint').querySelector('p').textContent=d.hint;
+ $('checkResult').innerHTML=cfg().passed?'<div class="result good">Solved · all checks passed.</div>':'';$('formMsg').textContent='';
+ endpoints(d.sample[0],d.sample[1]);$('traffic').value=d.sample[2];selected=i===0?'S1':'R1';cancelEdit();rewind();setTab(i===3?'routes':'policies');renderRules();renderRoutes();progress();
+}
+$('ruleForm').addEventListener('submit',e=>{
+ e.preventDefault();const c=cfg();const r={id:editId??Math.max(0,...c.rules.map(q=>q.id))+1,dev:$('dev').value,priority:Number($('priority').value),port:$('inport').value,src:$('rsrc').value,dst:$('rdst').value,kind:$('rtype').value,action:$('action').value};
+ if(!validRule(r))return;
+ if(c.rules.some(q=>q.id!==editId&&q.dev===r.dev&&q.priority===r.priority)){$('formMsg').textContent='Choose an unused priority on '+r.dev+' so rule order is unambiguous.';return}
+ if(r.src!=='*'&&r.src===r.dst){$('formMsg').textContent='Choose distinct endpoints or use Any user.';return}
+ if(editId===null)c.rules.push(r);else c.rules=c.rules.map(q=>q.id===editId?r:q);
+ hits[r.id]=0;cancelEdit();alter();$('formMsg').textContent='Installed rule #'+r.id+' on '+r.dev+'. Run a new probe to see it in action.';
+});
+$('rules').addEventListener('click',e=>{
+ const edit=e.target.closest('[data-edit]'),del=e.target.closest('[data-del]');if(!edit&&!del)return;const id=Number(edit?edit.dataset.edit:del.dataset.del),r=cfg().rules.find(q=>q.id===id);if(!r)return;
+ if(del){cfg().rules=cfg().rules.filter(q=>q.id!==id);delete hits[id];if(editId===id)cancelEdit();alter();$('formMsg').textContent='Removed rule #'+id+'.';return}
+ editId=id;$('dev').value=r.dev;ports();$('priority').value=r.priority;$('inport').value=r.port;$('rsrc').value=r.src;$('rdst').value=r.dst;$('rtype').value=r.kind;$('action').value=r.action;$('cancel').classList.remove('hide');$('install').textContent='Save changes';$('formMsg').textContent='Editing rule #'+id+'.';$('dev').focus();
+});
+$('cancel').onclick=()=>{cancelEdit();$('formMsg').textContent=''};$('dev').onchange=ports;
+$('routes').addEventListener('change',e=>{const l=Number(e.target.dataset.route);if([10,20].includes(l)){cfg().routes[l]=e.target.checked;alter()}});
+$('case').onchange=e=>loadCase(Number(e.target.value));
+$('reset').onclick=()=>{if(!confirm('Restore the starting rules and routes for this case?'))return;configs[current]=fresh(current);save();loadCase(current)};
+$('check').onclick=()=>{
+ pause();renderTrace();const checks=checkCase(current,cfg()),n=checks.filter(c=>c.good).length,pass=n===checks.length;cfg().passed=pass;save();progress();
+ $('checkResult').innerHTML='<div class="result '+(pass?'good':'bad')+'"><b>'+n+' / '+checks.length+' checks passed</b>'+(pass?' · Case solved':' · Review failed probes')+'</div><ul class="tests">'+checks.map(c=>'<li class="'+(c.good?'checkok':'checkfail')+'">'+(c.good?'Pass':'Fail')+' · '+c.label+'</li>').join('')+'</ul>';
+};
+$('src').onchange=()=>{endpoints($('src').value,$('dst').value);rewind()};$('dst').onchange=rewind;$('traffic').onchange=rewind;
+$('play').onclick=play;$('step').onclick=advance;$('clear').onclick=rewind;
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
+function inspectNode(e){const n=e.target.closest('[data-node]');if(n){selected=n.dataset.node;setTab('device');if(e.type==='keydown')document.querySelector('[data-tab="device"]').focus()}}
+$('map').addEventListener('click',inspectNode);$('map').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();inspectNode(e)}});
+$('guideLink').onclick=()=>{$('guide').open=true};
+$('src').innerHTML=H;$('case').innerHTML=caseDefs.map((c,i)=>opt(i,c.title)).join('');$('dev').innerHTML=devices.map(id=>opt(id,id)).join('');
+$('rsrc').innerHTML=$('rdst').innerHTML=opt('*','Any user')+H;
+loadCase(0);
+</script></body></html>
