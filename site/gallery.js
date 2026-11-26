@@ -2,6 +2,10 @@
   const groups = [...document.querySelectorAll('[data-folder]')];
   if (!groups.length || !/^https?:$/.test(location.protocol)) return;
   let branch = 'master';
+  if (['raw.githack.com', 'rawcdn.githack.com'].includes(location.hostname)) {
+    const match = location.pathname.match(/^\/ml-adnan-bashir\/portfolio\/(.+?)\/site\//);
+    if (match) branch = decodeURIComponent(match[1]);
+  }
   if (location.hostname === 'htmlpreview.github.io') {
     const path = new URL(location.search.slice(1)).pathname;
     branch = decodeURIComponent(path.split('/blob/')[1].split('/site/')[0]);
@@ -11,6 +15,7 @@
     if (!response.ok) throw Error();
     const listing = await response.json();
     if (listing.truncated) throw Error();
+    if (!listing.tree.some(item => item.type === 'tree' && item.path === 'site')) throw Error('Missing portfolio layout');
     const other = groups.find(grid => grid.dataset.folder === 'lecture-apps');
     if (other) {
       const nav = document.querySelector('.course-jump');
