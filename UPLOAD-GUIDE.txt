@@ -50,3 +50,18 @@ projects.html
 research.html
 teaching.html
 UPLOAD-GUIDE.txt
+
+
+Lecture apps and visits
+The course hub links to activity1.html through activity8.html inside each course folder. All supplied HTML pages already count hosted visits. If you replace a whole page with independent HTML, include the shared counter script before </body>. From lecture-apps/<course>/ use <script src="../../page-visits.js"></script>. For a root page use <script src="page-visits.js"></script>. The existing homepage badge displays the shared total. An automatic redirect counts at its destination.
+
+NUMBERED PROJECTS
+Replace any of project1.html through project100.html beside projects.html, then publish
+the file normally. The Projects page discovers filled slots on its next hosted page
+load. Existing projects come first and uploaded projects follow in numeric order.
+Slots can be filled in any order. Put the project name in the HTML title and an
+optional summary in a meta description near the top of the file. A plain HTML
+page works without either. To withdraw a project, restore its original placeholder.
+To count direct visits to a newly uploaded project, include the normal portfolio
+counter before </body>: <script src="page-visits.js"></script>.
+To preview discovery locally, open the site through a local HTTP server.

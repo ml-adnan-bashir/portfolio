@@ -89,10 +89,8 @@
       fragment.append(card({ ...app, href }));
       added++;
     }
-    // Keep the existing coming-soon card after the working app links.
-    const placeholder = Array.from(grid.children).find(node =>
-      node.matches('.project-card') && node.querySelector('.project-status') && !node.querySelector('a[href]'));
-    grid.insertBefore(fragment, placeholder || null);
+    // Curated entries precede automatically discovered numbered uploads.
+    grid.insertBefore(fragment, grid.querySelector('[data-project-slot]'));
     const section = document.getElementById('custom-apps');
     if (section) section.hidden = added === 0;
     const count = document.querySelector('.project-count');
