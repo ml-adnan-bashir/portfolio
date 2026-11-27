@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop Room — Adnan Bashir</title><meta name="description" content="Participant access to the workshop agenda, activity instructions, and materials.">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#10191b;color:#f4eedf;font:17px/1.6 system-ui,sans-serif}main{max-width:820px;margin:auto;padding:9vh 24px}header{border-top:3px solid #e1b783;padding-top:14px;color:#e1b783;letter-spacing:.1em;font-size:.82rem}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.1}h1{font-size:clamp(3rem,8vw,5.5rem);margin:.65em 0 .35em}section,form{border-top:1px solid #526063;margin-top:28px;padding-top:20px}label{display:block;margin:18px 0 5px}input,textarea,button{font:inherit;border-radius:5px;padding:10px 14px}input,textarea{width:100%;background:#172629;color:inherit;border:1px solid #8c9997}textarea{min-height:200px}button{margin-top:18px;background:#e1b783;color:#201c19;border:0;cursor:pointer}a{color:#edc895}#notes{white-space:pre-wrap;overflow-wrap:anywhere}#status{color:#fad1a4}
+</style></head><body><main><header>ADNAN BASHIR &nbsp; / &nbsp; WORKSHOPS</header><h1>Workshop room</h1>
+<div id="view"></div><p id="status" role="status"></p></main>
+<script id="payload" type="application/json">{"salt":"CRqbjtD4GkK1CS3dcy+ybg==","iv":"XzkBFjrTm9LTFQTA","data":"80Hqrhv3Pv0np/luMDCf4VzXux2c4es5I0wydRIQ2MX8kfwQFSNgCQ0gS2xv5DJNuow9Y/Rn/64Bhm+3cn1vKYaWiyihlM6JlsTxS8BLLO8obKv2QL+ZIxuxXDeNiHPXeL3T3eHklJbFVIlBYLtTaah2rLqUbYR8OCDdtLhG2wKygUi8yYNTLLHqa/rJisKx2QfJ9POmu2afwXnxMA7odhg8vfDnNlJkkHE3wuXEZOVi09HNpYjk+UEClr3UVIs/F9jWTPNSw3+va6W92trLpHnwTO89fhoeUMSmM9FAsih61qzoV5WlOKpEdvjDikdhQf6TuklwhDxl/FFMzxxBhvlW7Ksc6GOMhFhGKI+wq+pQ/L1OC6/BwRzdDmwcO1i7PcC36KTgIhHoGhFJBbCqYvJmsbk7/h5/UpOzJ/UiFhmfjHxrqpk2mJLbgBV64hbvises2jI+1GkQLUZ8ST31sUHPRzJpliEkplhbj2PdSgPcHYVcwvc+duNjrnevtaeuSiunEvWbnwN1EMYSHebUJT21qOBix2MsVjLUOe1cMzVQFFsFBkJzqX9lwVu/Zt/h17mfJ+d+agn4VFlgEyLrDp0uPPHQUIlUAOpYgHD1fBNExNtk0rNs/Fg2II+8N7eMt6ZUx/nX"}</script>
+<script>
+const packet=JSON.parse(document.querySelector('#payload').textContent);
+const view=document.querySelector('#view'), statusLine=document.querySelector('#status');
+const encode=a=>btoa(Array.from(new Uint8Array(a),b=>String.fromCharCode(b)).join(''));
+const decode=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function keyFor(password,salt){
+ const seed=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveKey']);
+ return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:600000,hash:'SHA-256'},seed,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);
+}
+function setup(){
+ view.innerHTML='<p>Prepare your participant page. Enter the workshop details, choose a password, and download the finished file.</p><form><label for="title">Workshop title</label><input id="title" required><label for="body">Agenda, instructions, and resource links</label><textarea id="body" required></textarea><label for="pw">Participant password (at least 12 characters)</label><input id="pw" type="password" minlength="12" required autocomplete="new-password"><button>Download participant page</button></form>';
+ document.querySelector('#title').value='Flagged and Curious';
+ document.querySelector('#body').value='Workshop agenda\n\n0–10 min · Inspect a sample of connection timestamps. What catches your eye?\n\n10–35 min · Calculate the time between consecutive connections. Plot the gaps and identify one recurring pattern.\n\n35–50 min · Compare your candidate with routine scheduled traffic. What evidence would help distinguish them?\n\n50–60 min · Share one finding, one alternative explanation, and one question for further investigation.';
+ view.querySelector('form').onsubmit=async e=>{
+ e.preventDefault();const button=e.target.querySelector('button');button.disabled=true;
+ try{const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12));
+ const key=await keyFor(document.querySelector('#pw').value,salt);
+ const content=JSON.stringify([document.querySelector('#title').value,document.querySelector('#body').value]);
+ const encrypted=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,new TextEncoder().encode(content));
+ const root=document.documentElement.cloneNode(true);root.querySelector('#view').replaceChildren();root.querySelector('#status').textContent='';
+ root.querySelector('#payload').textContent=JSON.stringify({salt:encode(salt),iv:encode(iv),data:encode(encrypted)});
+ const url=URL.createObjectURL(new Blob(['<!doctype html>\n',root.outerHTML],{type:'text/html'}));
+ const link=document.createElement('a');link.href=url;link.download='project1.html';link.click();setTimeout(()=>URL.revokeObjectURL(url),60000);
+ statusLine.textContent='Participant copy created. Upload the downloaded copy as projects/project1.html.';
+ }catch{statusLine.textContent='Download failed. Open this file in Chrome locally or over HTTPS and try again.'}finally{button.disabled=false}
+ };
+}
+function lock(){
+ document.querySelector('h1').textContent='Workshop room';statusLine.textContent='';
+ view.innerHTML='<p>Enter the password shared by your instructor to open the workshop materials.</p><form><label for="pw">Workshop password</label><input id="pw" type="password" required autocomplete="off"><button>Enter workshop</button></form>';
+ view.querySelector('form').onsubmit=async e=>{e.preventDefault();const button=e.target.querySelector('button');button.disabled=true;
+ try{const key=await keyFor(document.querySelector('#pw').value,decode(packet.salt));
+ const raw=await crypto.subtle.decrypt({name:'AES-GCM',iv:decode(packet.iv)},key,decode(packet.data));
+ const [title,body]=JSON.parse(new TextDecoder().decode(raw));document.querySelector('h1').textContent=title;
+ view.innerHTML='<section id="notes"></section><button>Lock workshop</button>';const notes=view.querySelector('#notes');
+ for(const part of body.split(/(https?:\/\/[^\s<>]+)/g)){if(/^https?:\/\//.test(part)){const a=document.createElement('a');a.href=part;a.textContent=part;a.target='_blank';a.rel='noopener noreferrer';notes.append(a)}else notes.append(part)}
+ view.querySelector('button').onclick=lock;statusLine.textContent='';
+ }catch{statusLine.textContent='Could not unlock the workshop. Check the password and try again.'}finally{button.disabled=false}
+ };
+}
+if(packet)lock();else setup();
+</script>
+<footer id="visit-counter" style="text-align:center;padding:1rem"><span class="visit-counter-status">Page visits</span> <img hidden height="20" alt="Portfolio page visits" data-counter-src="https://hits.sh/ml-adnan-bashir.github.io/portfolio.svg?label=Page%20visits&amp;color=f4c4ad&amp;labelColor=090a0d&amp;style=flat"></footer><script src="../page-visits.js"></script></body></html>

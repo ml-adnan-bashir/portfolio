@@ -1,0 +1,104 @@
+Portfolio repository (80 files)
+├── index.html
+└── site/
+    ├── about.html
+    ├── apps.html
+    ├── apps/
+    │   ├── CloudLens.html
+    │   ├── CrowdLens.html
+    │   ├── cantt-events/
+    │   │   └── index.html
+    │   ├── custom/
+    │   │   ├── NCCPL-Report-App-mu2t1eal-iyyf.html
+    │   │   ├── phonecast.html
+    │   │   └── phonegas.html
+    │   ├── erm/
+    │   │   └── index.html
+    │   ├── net-simulator/
+    │   │   └── index.html
+    │   ├── project1.html
+    │   ├── raftar/
+    │   │   └── index.html
+    │   ├── tilt-scale/
+    │   │   └── index.html
+    │   ├── urdu-cloud/
+    │   │   └── index.html
+    │   └── zarb/
+    │       └── index.html
+    ├── archive/
+    │   └── cs-260/
+    │       └── activity1.html
+    ├── builder-defaults.js
+    ├── builder/
+    │   ├── engine.js
+    │   ├── files.js
+    │   ├── jszip.min.js
+    │   ├── katex.min.js
+    │   ├── legacy-core.js
+    │   ├── studio.css
+    │   └── studio.js
+    ├── custom-apps.js
+    ├── docs/
+    │   ├── BUILDER-README.md
+    │   ├── DIRECTORY-TREE.txt
+    │   ├── READ-ME.txt
+    │   ├── README.md
+    │   ├── THIRD-PARTY-NOTICES.txt
+    │   └── UPLOAD-GUIDE.txt
+    ├── gallery.js
+    ├── index-builder(1).html
+    ├── index-builder.html
+    ├── index.html
+    ├── lecture-apps.html
+    ├── lecture-apps/
+    │   ├── cs-260/
+    │   │   ├── README.md
+    │   │   ├── activity1.html
+    │   │   ├── activity2.html
+    │   │   ├── activity3.html
+    │   │   └── course.txt
+    │   ├── cs-344/
+    │   │   ├── README.md
+    │   │   ├── activity1.html
+    │   │   ├── activity2.html
+    │   │   ├── activity3.html
+    │   │   └── course.txt
+    │   └── cy-752/
+    │       ├── README.md
+    │       ├── activity1.html
+    │       ├── activity2.html
+    │       └── course.txt
+    ├── navigation.css
+    ├── page-visits.js
+    ├── pdfs/
+    │   ├── analytical-reasoning.pdf
+    │   ├── drum-paper.pdf
+    │   ├── mathematics-formulas.pdf
+    │   ├── mcq-strategy.pdf
+    │   ├── nat-ics-practice.pdf
+    │   ├── network-security-week-1.pdf
+    │   ├── physics-formulas.pdf
+    │   └── segstream-flowchart.pdf
+    ├── portfolio-design.json
+    ├── portfolio.css
+    ├── previews/
+    │   ├── analytical-reasoning.webp
+    │   ├── drum-paper.webp
+    │   ├── mathematics-formulas.webp
+    │   ├── mcq-strategy.webp
+    │   ├── nat-ics-practice.webp
+    │   ├── network-security-week-1.webp
+    │   ├── physics-formulas.webp
+    │   └── segstream-flowchart.webp
+    ├── projects-data.json
+    ├── projects.html
+    ├── projects/
+    │   └── project1.html
+    ├── research-apps.html
+    ├── research-apps/
+    │   ├── olinear.html
+    │   └── segstream/
+    │       └── index.html
+    ├── research.html
+    ├── signal.js
+    └── teaching.html
