@@ -320,7 +320,7 @@ header{height:auto;min-height:5.625rem;flex-wrap:wrap}nav{flex-wrap:wrap}.hero{h
 #custom-apps[hidden]{display:none!important}
 #custom-apps .project-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
 #custom-apps .projects-footer-link{margin-top:28px}
-</style></head><body><canvas id="field" aria-hidden="true"></canvas><a class="skip" href="#main-content">Skip to content</a><header><a class="brand" href="index.html">Adnan Bashir</a><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="research-apps.html">Research Apps</a><a href="lecture-apps.html">Lecture Apps</a><a href="apps.html">Apps</a></nav><button class="motion" id="motion" aria-pressed="true" aria-label="Pause signal motion">Motion on</button></header><main id="main-content" tabindex="-1"><section id="home" class="hero" data-builder-hidden="false"><div class="hero-content"><div class="eyebrow">ML Researcher · AI Educator · Audiophile</div><h1>Adnan Bashir.<br><em>AI × Art × ML</em></h1><p class="intro">I’m Adnan Bashir. I study how machines learn from changing data, teach cybersecurity, and build tools that make complex ideas visible.</p><div class="home-shortcuts"><a href="apps.html">Explore projects ↗</a><a href="lecture-apps.html">Lecture apps ↗</a></div></div><div class="hero-bottom"><a class="text-link" href="research.html#research">Explore my work <span aria-hidden="true">↓</span></a><div class="signal-actions"><span class="interaction-hint">Move to bend the signal · tap to ripple</span><button class="ripple-button" id="ripple">Send a ripple <span aria-hidden="true">◎</span></button></div></div></section>
+</style><script defer src="page-visits.js"></script></head><body><canvas id="field" aria-hidden="true"></canvas><a class="skip" href="#main-content">Skip to content</a><header><a class="brand" href="index.html">Adnan Bashir</a><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="research-apps.html">Research Apps</a><a href="lecture-apps.html">Lecture Apps</a><a href="apps.html">Apps</a></nav><button class="motion" id="motion" aria-pressed="true" aria-label="Pause signal motion">Motion on</button></header><main id="main-content" tabindex="-1"><section id="home" class="hero" data-builder-hidden="false"><div class="hero-content"><div class="eyebrow">ML Researcher · AI Educator · Audiophile</div><h1>Adnan Bashir.<br><em>AI × Art × ML</em></h1><p class="intro">I’m Adnan Bashir. I study how machines learn from changing data, teach cybersecurity, and build tools that make complex ideas visible.</p><div class="home-shortcuts"><a href="apps.html">Explore projects ↗</a><a href="lecture-apps.html">Lecture apps ↗</a></div></div><div class="hero-bottom"><a class="text-link" href="research.html#research">Explore my work <span aria-hidden="true">↓</span></a><div class="signal-actions"><span class="interaction-hint">Move to bend the signal · tap to ripple</span><button class="ripple-button" id="ripple">Send a ripple <span aria-hidden="true">◎</span></button></div></div></section>
 <section id="custom-apps" class="section" aria-labelledby="custom-apps-heading" hidden>
   <div class="section-head">
     <div class="eyebrow">Apps &amp; experiments</div>
@@ -644,29 +644,5 @@ header{height:auto;min-height:5.625rem;flex-wrap:wrap}nav{flex-wrap:wrap}.hero{h
     }),{rootMargin:'-15% 0px -55% 0px'});
     document.querySelectorAll('section[id]').forEach(s=>observer.observe(s));
   }
-})();
-</script><script id="portfolio-counter-script">/* One request per top-level page view, including a restored history entry. */
-(()=>{
-  if (window.top !== window.self || !/^https?:$/.test(location.protocol) || window.__portfolioCountInstalled) return;
-  window.__portfolioCountInstalled = true;
-  function countView() {
-    const box = document.getElementById('visit-counter');
-    const badge = box && box.querySelector('img[data-counter-src]');
-    const status = box && box.querySelector('.visit-counter-status');
-    const img = badge || new Image();
-    const url = new URL(badge?.dataset.counterSrc || 'https://hits.sh/ml-adnan-bashir.github.io/portfolio.svg?label=Page%20visits&color=f4c4ad&labelColor=090a0d&style=flat');
-    // The path identifies the existing shared counter. A fresh query bypasses image caches.
-    url.searchParams.set('_view',Date.now().toString(36)+'-'+Math.random().toString(36).slice(2));
-    img.referrerPolicy = 'no-referrer';
-    if (badge && status) {
-      status.hidden = false; status.textContent = 'Page visits · loading';
-      img.onload = () => {status.hidden = true; badge.hidden = false;};
-      img.onerror = () => {badge.hidden = true; status.hidden = false; status.textContent = 'Page visits · unavailable';};
-    }
-    img.src = url.href;
-  }
-  if(document.prerendering) document.addEventListener('prerenderingchange',countView,{once:true});
-  else countView();
-  window.addEventListener('pageshow',event=>{if(event.persisted) countView();});
 })();
 </script><noscript><img src="https://hits.sh/ml-adnan-bashir.github.io/portfolio.svg?label=Page%20visits&amp;color=f4c4ad&amp;labelColor=090a0d&amp;style=flat" width="1" height="1" alt="" referrerpolicy="no-referrer"></noscript><script type="application/json" id="portfolio-studio-state">{"version":2,"fonts":{"body":"original","headings":"original"},"layout":{"heroAlign":"original","heroHeight":0,"lineHeight":0,"cornerRadius":0,"cardBorder":1,"headerPosition":"original","imageRatio":"1 / 1","imageFit":"cover","cardShadow":0},"sections":[{"id":"home","label":"Hero","enabled":true,"background":"","padding":0},{"id":"about","label":"About","enabled":true,"background":"","padding":0},{"id":"journey","label":"Journey","enabled":true,"background":"","padding":0},{"id":"research","label":"Research","enabled":true,"background":"","padding":0},{"id":"papers","label":"Papers","enabled":true,"background":"","padding":0},{"id":"teaching","label":"Teaching","enabled":true,"background":"","padding":0},{"id":"exploration","label":"Exploration","enabled":true,"background":"","padding":0},{"id":"mathematics","label":"Mathematical notes","enabled":true,"background":"","padding":0},{"id":"projects","label":"Selected projects","enabled":true,"background":"","padding":0},{"id":"resources","label":"Teaching PDFs","enabled":false,"background":"","padding":0}],"navigation":[{"label":"About","href":"#about","enabled":true},{"label":"Journey","href":"#journey","enabled":true},{"label":"Research","href":"#research","enabled":true},{"label":"Papers","href":"#papers","enabled":true},{"label":"Teaching","href":"#teaching","enabled":true},{"label":"Projects","href":"apps.html","enabled":true}],"motion":{"enabled":true,"autoplay":true,"showButton":true,"showRipple":true},"counter":{"enabled":true,"endpoint":"https://hits.sh/ml-adnan-bashir.github.io/portfolio.svg?label=Page%20visits&color=f4c4ad&labelColor=090a0d&style=flat","label":"Page visits","color":"#f4c4ad","labelColor":"#090a0d","align":"original","style":"flat","height":20},"seo":{"homeTitle":"Adnan Bashir — Research, teaching & exploration","projectsTitle":"Projects — Adnan Bashir","canonical":"","socialTitle":"","socialDescription":"","socialImage":"","favicon":"","robots":"index,follow"},"customCSS":"","customSections":[]}</script></body></html>
