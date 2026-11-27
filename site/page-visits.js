@@ -7,6 +7,11 @@
   const channel = 'BroadcastChannel' in window ? new BroadcastChannel('portfolio-visits-' + directory.pathname) : null;
   let canRead = false;
   let ownHit = false;
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      canRead = navigator.serviceWorker.controller?.scriptURL === new URL('visit-badge-worker.js', directory).href;
+    });
+  }
   image.referrerPolicy = 'no-referrer';
   image.onload = () => {
     image.hidden = false;
