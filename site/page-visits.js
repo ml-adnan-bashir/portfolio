@@ -1,4 +1,57 @@
 (() => {
+  if (window.top !== window.self || location.origin !== 'https://ml-adnan-bashir.github.io' ||
+      window.__portfolioAnalyticsInstalled || !crypto.randomUUID) return;
+  window.__portfolioAnalyticsInstalled = true;
+  const endpoint = 'https://portfolio-visit-reports.ml-adnan-bashir.chatgpt.site/collect';
+  const portfolioPath = new URL('../', document.currentScript.src).pathname;
+
+  function canonical(url) {
+    // Query strings and fragments can contain registration IDs and access codes.
+    return url.origin + url.pathname.replace(/\/index\.html$/i, '/');
+  }
+
+  function record(kind, url, label) {
+    const body = new URLSearchParams({
+      id: crypto.randomUUID(),
+      kind,
+      target: canonical(url),
+      label: String(label || '').replace(/\s+/g, ' ').trim().slice(0, 150)
+    });
+    const send = () => fetch(endpoint, {
+      method: 'POST', body, keepalive: true, credentials: 'omit', referrerPolicy: 'no-referrer'
+    });
+    // The id is reused if delivery is uncertain so the collector can deduplicate.
+    send().then(response => { if (response.status >= 500) return send(); })
+      .catch(() => send()).catch(() => {});
+  }
+
+  function opened() {
+    if (performance.getEntriesByType('navigation')[0]?.type !== 'back_forward') {
+      record('page', location, document.title);
+    }
+  }
+
+  function activated(event) {
+    if (!event.isTrusted || (event.type === 'auxclick' ? event.button !== 1 : event.button !== 0)) return;
+    const link = event.target.closest?.('a[href],area[href]');
+    if (!link) return;
+    const target = new URL(link.href, location.href);
+    if (!/^https?:$/.test(target.protocol)) return;
+    const internal = target.origin === location.origin && target.pathname.startsWith(portfolioPath);
+    // The destination records its own view for ordinary internal navigation.
+    if (internal && !link.hasAttribute('download') && /(?:\/|\.html?)$/i.test(target.pathname)) return;
+    if (target.hash && canonical(target) === canonical(location)) return;
+    record('link', target, link.getAttribute('aria-label') || link.textContent || link.title);
+  }
+
+  if (document.prerendering) document.addEventListener('prerenderingchange', opened, { once: true });
+  else opened();
+  document.addEventListener('click', activated, true);
+  document.addEventListener('auxclick', activated, true);
+})();
+
+(() => {
+  if (document.currentScript?.hasAttribute('data-analytics-only')) return;
   if (window.top !== window.self || !/^https?:$/.test(location.protocol) || window.__portfolioCountInstalled) return;
   window.__portfolioCountInstalled = true;
   const directory = new URL('.', document.currentScript.src);
