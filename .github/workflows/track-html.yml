@@ -1,0 +1,88 @@
+name: Track portfolio HTML uploads
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+concurrency:
+  group: portfolio-html-tracking
+  cancel-in-progress: false
+jobs:
+  instrument:
+    environment: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: Add the shared tracker to published HTML pages
+        shell: python
+        run: |
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urljoin, urlsplit
+          import re
+
+          origin = "https://ml-adnan-bashir.github.io"
+          tracker = "/portfolio/site/page-visits.js"
+
+          class Page(HTMLParser):
+              def __init__(self, url):
+                  super().__init__()
+                  self.url = url
+                  self.sources = []
+                  self.redirect = False
+                  self.end = None
+                  self.in_template = 0
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "template":
+                      self.in_template += 1
+                  if self.in_template:
+                      return
+                  if tag == "base" and attrs.get("href"):
+                      self.url = urljoin(self.url, attrs["href"])
+                  if tag == "script" and attrs.get("src"):
+                      self.sources.append(attrs["src"])
+                  if tag == "meta" and (attrs.get("http-equiv") or "").lower() == "refresh":
+                      self.redirect |= bool(re.match(r"\s*0(?:\.0*)?\s*;\s*url\s*=", attrs.get("content") or "", re.I))
+
+              def handle_endtag(self, tag):
+                  if tag == "template":
+                      self.in_template = max(0, self.in_template - 1)
+                  if tag == "body" and not self.in_template:
+                      self.end = self.getpos()
+
+          for path in Path(".").rglob("*"):
+              if path.suffix.lower() not in {".html", ".htm"} or any(p.startswith(".") for p in path.parts):
+                  continue
+              if path.is_symlink() or path.as_posix() == "site/analytics.html":
+                  continue
+              raw = path.read_bytes()
+              # Latin-1 gives a reversible, one-byte-per-character view for ASCII markup.
+              html = raw.decode("latin-1")
+              page = Page(origin + "/portfolio/" + path.as_posix())
+              page.feed(html)
+              page.close()
+              if page.redirect or any(urlsplit(urljoin(page.url, src))._replace(query="", fragment="").geturl() == origin + tracker for src in page.sources):
+                  continue
+              index = len(html)
+              if page.end:
+                  line, col = page.end
+                  index = sum(map(len, html.split("\n")[:line-1])) + line - 1 + col
+              script = '<script defer src="' + origin + tracker + '"></script>\n'
+              path.write_bytes(raw[:index] + script.encode("ascii") + raw[index:])
+              print("Added tracker:", path)
+      - name: Stage the portfolio for publication
+        run: |
+          mkdir "$RUNNER_TEMP/portfolio-pages"
+          git ls-files -z | tar --exclude='.github/*' --null -T - -cf - | tar -xf - -C "$RUNNER_TEMP/portfolio-pages"
+          rm -rf "$RUNNER_TEMP/portfolio-pages/.github"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/portfolio-pages
+      - uses: actions/deploy-pages@v4
