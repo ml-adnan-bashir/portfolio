@@ -54,7 +54,7 @@ async function update(fields) {
     const pages = rows.filter(r => r.kind === 'page'), links = rows.filter(r => r.kind === 'link');
     const sum = list => list.reduce((n,r) => n+r.n,0);
     const historical = 1704;
-    const metrics = [['Total page visits', historical+sum(pages)],['Before 28 November 2026',historical],['Tracked page visits',sum(pages)],['Direct link clicks',sum(links)]];
+    const metrics = [['Total page visits', historical + sum(pages)]];
     byId('totals').replaceChildren(...metrics.map(([name,n]) => {
       const box = document.createElement('div'), value = document.createElement('strong');
       box.className = 'metric'; value.textContent = n.toLocaleString(); box.append(value,name); return box;
